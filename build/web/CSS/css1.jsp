@@ -28,8 +28,11 @@
 
             .navigation a {
                 color: #fff;
-                text-decoration: none;
                 margin-right: 10px;
+            }
+
+            a{
+                text-decoration: none;
             }
 
             .container {
@@ -120,7 +123,7 @@
             .btn-them-gio-hang {
                 display: block;
                 width: 100%;
-                padding: 8px 16px;
+                padding: 8px 0px;
                 background-color: #337ab7;
                 color: #fff;
                 border: none;

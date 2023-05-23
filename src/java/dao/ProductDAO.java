@@ -47,4 +47,27 @@ public class ProductDAO {
         return products;
     }
     
+    public Product getProductById(int id) {
+        Product p =  new Product();
+        
+        try {
+            query = "select * from products where id ="+id;
+            pst = this.con.prepareStatement(query);
+            rs = pst.executeQuery();
+            while (rs.next()) {                
+                Product row = new Product();
+                row.setId(rs.getInt("id"));
+                row.setName(rs.getString("name"));
+                row.setCategory(rs.getString("category"));
+                row.setPrice(rs.getFloat("price"));
+                row.setImage(rs.getString("image"));
+                
+                p = row;
+            }
+        } catch (SQLException e) {
+        }
+        
+        return p;
+    }
+    
 }
