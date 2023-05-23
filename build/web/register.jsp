@@ -10,7 +10,7 @@
     </head>
     <div class="header">
         <div class="navigation">
-            <a href="home.jsp">Home</a>
+           
             <a href="login.jsp">Login</a>
             <a href="register.jsp">Register</a>
         </div>
