@@ -13,8 +13,6 @@
     }
     ProductDAO pd = new ProductDAO(DBcon.getConnection());
     List<Product> products = pd.getAllProducts();
-    
-    
 %>
 <!DOCTYPE html>
 <html>
@@ -38,17 +36,18 @@
             <div class="Tieu-de">Tất cả sản phẩm</div>
             <div class="hang">
                 <%
-                    if( !products.isEmpty()) {
-                        for (Product p: products) { %>
+                if( !products.isEmpty()) {
+                    for (Product p: products) { 
+                %>
                 <div class="the-san-pham">
                     <h3 class="ten-san-pham"><%= p.getName() %>  </h3>
                     <h4 class="gia-san-pham"><%= p.getPrice() %> VNÐ </h4>
                     <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
-                    <button class="btn-chi-tiet">Xem chi tiết</button>
-                    <button class="btn-them-gio-hang">Thêm vào giỏ hàng</button>
+                    <a class="btn-chi-tiet" href="product-detail.jsp?id=<%=p.getId()%>">Xem chi tiết</a>
+                    <a class="btn-them-gio-hang">Thêm vào giỏ hàng</a>
                 </div>
                 <% }
-            }
+                }
                 %>
 
 
