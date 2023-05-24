@@ -20,9 +20,11 @@
 
         <div class="container">
             <h1>Register</h1>
-            <form method="post" action="register.jsp">
+            <form method="post" action="registerServlet">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required><br><br>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required><br><br>
                 <input type="submit" value="Đăng ký">
