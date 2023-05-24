@@ -4,21 +4,21 @@
  */
 package controller;
 
-import connection.DBcon;
-import dao.UserDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import connection.DBcon;
+import dao.UserDAO;
 import model.User;
 
 /**
  *
  * @author truon
  */
-public class loginServlet extends HttpServlet {
+public class registerServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +37,10 @@ public class loginServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet loginServlet</title>");
+            out.println("<title>Servlet registerServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet loginServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet registerServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,8 +58,7 @@ public class loginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("login.jsp");
-
+        processRequest(request, response);
     }
 
     /**
@@ -73,26 +72,16 @@ public class loginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            String email = request.getParameter("username");
-            String password = request.getParameter("password");
-
-            try {
-                UserDAO udao = new UserDAO(DBcon.getConnection());
-                User user = udao.userLogin(email, password);
-
-                if (user != null) {
-                    request.getSession().setAttribute("auth", user);
-                    response.sendRedirect("home.jsp");
-                } else {
-                    out.println("<script>alert('Tài khoản hoặc mật khẩu không hợp lệ. Vui lòng thử lại.'); window.location.href='login.jsp';</script>");
-                }
-
-            } catch (ClassNotFoundException e) {
-            }
-
+        String username = request.getParameter("username");
+        String name = request.getParameter("name");
+        String password = request.getParameter("password");
+        User user = new User(username, name, password);
+        try {
+            UserDAO userDAO = new UserDAO(DBcon.getConnection());
+            userDAO.addUser(user);
+            response.sendRedirect("login.jsp");
         } catch (Exception e) {
+            
         }
     }
 
