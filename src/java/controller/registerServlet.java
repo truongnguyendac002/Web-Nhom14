@@ -12,6 +12,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import connection.DBcon;
 import dao.UserDAO;
+import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.User;
 
 /**
@@ -29,6 +33,8 @@ public class registerServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -72,15 +78,20 @@ public class registerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String name = request.getParameter("name");
-        String password = request.getParameter("password");
-        User user = new User(username, name, password);
         try {
-            UserDAO userDAO = new UserDAO(DBcon.getConnection());
-            userDAO.addUser(user);
-            response.sendRedirect("login.jsp");
-        } catch (Exception e) {
+            String username = request.getParameter("username");
+            String name = request.getParameter("name");
+            String password = request.getParameter("password");
+            User user = new User(username, name, User.hashPassword(password));
+            try {
+                UserDAO userDAO = new UserDAO(DBcon.getConnection());
+                userDAO.addUser(user);
+                response.sendRedirect("login.jsp");
+            } catch (IOException | ClassNotFoundException | SQLException e) {
+                
+            }
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(registerServlet.class.getName()).log(Level.SEVERE, null, ex);
             
         }
     }

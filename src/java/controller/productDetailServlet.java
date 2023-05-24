@@ -60,14 +60,12 @@ public class productDetailServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String productId = request.getParameter("id");
-            int productIdInt = Integer.parseInt(productId);
-            ProductDAO productDAO = new ProductDAO(DBcon.getConnection());
-            Product product = productDAO.getProductById(productIdInt);
+            String productId = request.getParameter("productId");
+           
 
             String userId = request.getParameter("userId");
 
-            request.setAttribute("product", product);
+            request.setAttribute("productId", productId);
             request.setAttribute("userId", userId);
             RequestDispatcher rd = request.getRequestDispatcher("product-detail.jsp");
             rd.forward(request, response);

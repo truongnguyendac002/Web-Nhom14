@@ -43,7 +43,7 @@
                     <h3 class="ten-san-pham"><%= p.getName() %>  </h3>
                     <h4 class="gia-san-pham"><%= p.getPrice() %> VNÐ </h4>
                     <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
-                    <a class="btn-chi-tiet" href="productDetailServlet?id=<%=p.getId()%>&userId=<%=auth.getId()%>">Xem chi tiết</a>
+                    <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>&userId=<%=auth.getId()%>">Xem chi tiết</a>
 
                     <a class="btn-them-gio-hang">Thêm vào giỏ hàng</a>
                 </div>

@@ -85,7 +85,7 @@ public class addCommentServlet extends HttpServlet {
             comment.setUserId(Integer.parseInt(userId));
             comment.setDetail(detail);
             commentDAO.addComment(comment);
-            response.sendRedirect("product-detail.jsp?id=" + productId + "&userId=" + userId);
+            response.sendRedirect("product-detail.jsp?productId=" + productId + "&userId=" + userId);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(addCommentServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
