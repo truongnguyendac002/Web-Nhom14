@@ -20,7 +20,7 @@ public class UserDAO {
     private String query;
     private PreparedStatement pst;
     private ResultSet rs;
-
+    
     public UserDAO(Connection con) {
         this.con = con;
     }

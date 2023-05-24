@@ -19,8 +19,11 @@
         <title>Product detail</title>
         <%@include file = "CSS/css1.jsp" %>
         <%
+        String productId = request.getParameter("productId");
+        int productIdInt = Integer.parseInt(productId);
+        ProductDAO productDAO = new ProductDAO(DBcon.getConnection());
+        Product product = productDAO.getProductById(productIdInt);
         
-        Product product = (Product)request.getAttribute("product");
 
         String userId =(String) request.getAttribute("userId");
         %>
@@ -122,7 +125,7 @@
         <div class = "comment content">
             <div class="comment-form">
                 <form method="post" action="addCommentServlet">
-                    <input type="text" name="detail" placeholder="Nhập bình luận"><br>
+                    <input type="text" name="detail" placeholder="Nhập bình luận" required><br>
                     <input type="hidden" name="productId" value="<%= product.getId() %>">
                     <input type="hidden" name="userId" value="<%= userId %>">
                     <input type="submit" value="Bình luận">
