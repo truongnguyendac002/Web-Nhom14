@@ -3,22 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/src/java/dao/ProductDAO.java</file>
-            <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/web/login.jsp</file>
             <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/web/home.jsp</file>
-            <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/src/java/controller/addCommentServlet.java</file>
             <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/src/java/controller/loginServlet.java</file>
-            <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/src/java/controller/logoutServlet.java</file>
-            <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/web/CSS/css1.jsp</file>
-            <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/src/java/dao/CommentDAO.java</file>
-            <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/web/register.jsp</file>
             <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/web/product-detail.jsp</file>
-            <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/src/java/model/Oder.java</file>
-            <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/src/java/model/User.java</file>
-            <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/src/java/model/Comment.java</file>
-            <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/src/java/controller/registerServlet.java</file>
-            <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/src/java/model/Product.java</file>
-            <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/src/java/dao/UserDAO.java</file>
+            <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/src/java/controller/productDetailServlet.java</file>
         </group>
     </open-files>
 </project-private>

@@ -19,12 +19,10 @@
         <title>Product detail</title>
         <%@include file = "CSS/css1.jsp" %>
         <%
-        String productId = request.getParameter("id");
-        int productIdInt = Integer.parseInt(productId);
-        ProductDAO productDAO = new ProductDAO(DBcon.getConnection()); 
-        Product product = productDAO.getProductById(productIdInt); 
+        
+        Product product = (Product)request.getAttribute("product");
 
-        String userId = request.getParameter("userId");
+        String userId =(String) request.getAttribute("userId");
         %>
         <style>
             .content {
@@ -61,12 +59,12 @@
                 margin-bottom: 20px;
             }
 
-            
+
 
             .comment-form input[type="submit"] {
                 padding: 8px 16px;
                 margin-top: 10px;
-                background-color: #4CAF50;
+                background-color: #337ab7;
                 color: white;
                 border: none;
                 border-radius: 5px;
@@ -95,6 +93,11 @@
             .comment-content {
                 margin-top: 5px;
             }
+            .btn-them-gio-hang {
+                /* background-color: #5cb85c; */
+                padding: 8px;
+                width: fit-content;
+            }
         </style>
     </head>
     <div class="header">
@@ -106,21 +109,23 @@
         </div>
     </div>
     <body>
-        <div class="content">
-            <h2>Product Detail</h2>
+        <div class="content" >
+            <%  %>
+            <h2>Chi tiết sản phẩm</h2>
             <p><strong>ID:</strong> <%= product.getId() %></p>
-            <p><strong>Name:</strong> <%= product.getName() %></p>
-            <p><strong>Category:</strong> <%= product.getCategory() %></p>
-            <p><strong>Price:</strong> <%= product.getPrice() %> VNÐ</p>
+            <p><strong>Tên sản phẩm:</strong> <%= product.getName() %></p>
+            <p><strong>Loại hàng:</strong> <%= product.getCategory() %></p>
+            <p><strong>Giá:</strong> <%= product.getPrice() %> VNÐ</p>
+            <a class="btn-them-gio-hang">Thêm vào giỏ hàng</a>
             <img src="./product-image/<%= product.getImage() %>" alt="Product Image">
         </div>
         <div class = "comment content">
             <div class="comment-form">
                 <form method="post" action="addCommentServlet">
-                    <input type="text" name="detail" placeholder="Nhap bình luan !"><br>
+                    <input type="text" name="detail" placeholder="Nhập bình luận"><br>
                     <input type="hidden" name="productId" value="<%= product.getId() %>">
                     <input type="hidden" name="userId" value="<%= userId %>">
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Bình luận">
                 </form>
             </div>
 
