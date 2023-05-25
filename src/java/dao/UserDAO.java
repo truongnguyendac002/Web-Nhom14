@@ -20,7 +20,7 @@ public class UserDAO {
     private String query;
     private PreparedStatement pst;
     private ResultSet rs;
-    
+
     public UserDAO(Connection con) {
         this.con = con;
     }
@@ -53,13 +53,13 @@ public class UserDAO {
         }
 
         try {
-            query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+            query = "INSERT INTO users (name, email, password, phone) VALUES (?, ?, ?, ?)";
 
             pst = this.con.prepareStatement(query);
             pst.setString(1, user.getName());
             pst.setString(2, user.getEmail());
             pst.setString(3, user.getPassword());
-
+            pst.setString(4, user.getPhone());
             rs = pst.executeQuery();
         } catch (SQLException e) {
         }
@@ -79,8 +79,31 @@ public class UserDAO {
             }
         } catch (SQLException e) {
         }
-
+        
         return false;
+
+    }
+
+    public User getUserById(int id) {
+        User u = new User();
+
+        try {
+            query = "select * from users where id =" + id;
+            pst = this.con.prepareStatement(query);
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                User row = new User();
+                row.setId(rs.getInt("id"));
+                row.setName(rs.getString("name"));
+                row.setEmail(rs.getString("email"));
+                row.setPhone(rs.getString("phone"));
+
+                u = row;
+            }
+        } catch (SQLException e) {
+        }
+
+        return u;
     }
 
 }

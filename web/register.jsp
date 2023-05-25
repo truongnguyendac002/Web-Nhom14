@@ -25,6 +25,8 @@
                 <input type="text" id="username" name="username" required><br><br>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required><br><br>
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" required><br><br>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required><br><br>
                 <input type="submit" value="Đăng ký">

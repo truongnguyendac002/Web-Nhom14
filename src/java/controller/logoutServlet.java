@@ -54,11 +54,12 @@ public class logoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         if (request.getSession().getAttribute("auth") != null) {
-            request.getSession().removeAttribute("auth");
+            // Xóa phiên hiện tại
+            request.getSession().invalidate();
+            // Chuyển hướng người dùng đến trang đăng nhập
             response.sendRedirect("login.jsp");
-            
-        } 
-        else {
+        } else {
+            // Nếu phiên không tồn tại, chuyển hướng người dùng đến trang chủ hoặc trang khác
             response.sendRedirect("home.jsp");
         }
     } 

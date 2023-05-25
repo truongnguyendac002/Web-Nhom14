@@ -19,7 +19,7 @@ public class User {
 //    CONSTRAINT UC_email UNIQUE (email)    
     
     private int id;
-    private String name, email, password;
+    private String name, email, password, phone;
 
     public User() {
     }
@@ -34,18 +34,24 @@ public class User {
         
         return sb.toString();
     }
-    public User(int id, String name, String email, String password) {
-        this.id = id;
+    
+    public User(String email, String name, String password, String phone) {
         this.name = name;
         this.email = email;
         this.password = password;
-    }
-    public User(String name, String email, String password) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
+        this.phone = phone;
+
+        
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    
 
     public int getId() {
         return id;

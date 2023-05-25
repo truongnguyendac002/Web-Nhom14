@@ -28,6 +28,7 @@
             <a href="order.jsp">Order</a>
             <a href="login.jsp">Login</a>
             <a href="logoutServlet">Logout</a>
+            <a style="float: right"><%= auth.getName()%> </a>
         </div>
     </div>
 
@@ -43,7 +44,7 @@
                     <h3 class="ten-san-pham"><%= p.getName() %>  </h3>
                     <h4 class="gia-san-pham"><%= p.getPrice() %> VNÐ </h4>
                     <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
-                    <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>&userId=<%=auth.getId()%>">Xem chi tiết</a>
+                    <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>">Xem chi tiết</a>
 
                     <a class="btn-them-gio-hang">Thêm vào giỏ hàng</a>
                 </div>
