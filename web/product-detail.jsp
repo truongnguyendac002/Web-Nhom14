@@ -19,13 +19,13 @@
         <title>Product detail</title>
         <%@include file = "CSS/css1.jsp" %>
         <%
-        String productId = request.getParameter("productId");
+        String productId =(String)request.getAttribute("productId");
         int productIdInt = Integer.parseInt(productId);
         ProductDAO productDAO = new ProductDAO(DBcon.getConnection());
         Product product = productDAO.getProductById(productIdInt);
-        
+        UserDAO userDAO = new UserDAO(DBcon.getConnection());
 
-        String userId =(String) request.getAttribute("userId");
+        User auth = (User) request.getSession().getAttribute("auth");
         %>
         <style>
             .content {
@@ -113,7 +113,7 @@
     </div>
     <body>
         <div class="content" >
-            <%  %>
+
             <h2>Chi tiết sản phẩm</h2>
             <p><strong>ID:</strong> <%= product.getId() %></p>
             <p><strong>Tên sản phẩm:</strong> <%= product.getName() %></p>
@@ -127,7 +127,6 @@
                 <form method="post" action="addCommentServlet">
                     <input type="text" name="detail" placeholder="Nhập bình luận" required><br>
                     <input type="hidden" name="productId" value="<%= product.getId() %>">
-                    <input type="hidden" name="userId" value="<%= userId %>">
                     <input type="submit" value="Bình luận">
                 </form>
             </div>
@@ -139,7 +138,7 @@
                
                    for (Comment comment : comments) { %>
                 <li class="comment-item">
-                    <div class="comment-user"><%= comment.getUserId() %></div>
+                    <div class="comment-user"><%= userDAO.getUserById(comment.getUserId()).getName() %></div>
                     <div class="comment-content"><%= comment.getDetail() %></div>
                 </li>
                 <% } %>

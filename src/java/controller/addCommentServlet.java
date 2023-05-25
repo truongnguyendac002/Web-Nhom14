@@ -6,6 +6,7 @@ package controller;
 
 import connection.DBcon;
 import dao.CommentDAO;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -15,6 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Comment;
+import model.User;
 
 /**
  *
@@ -74,20 +76,28 @@ public class addCommentServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            String productId = request.getParameter("productId");
-            String userId = request.getParameter("userId");
-            String detail = request.getParameter("detail");
-            
-            CommentDAO commentDAO = new CommentDAO(DBcon.getConnection());
-            Comment comment = new Comment();
-            comment.setProductId(Integer.parseInt(productId));
-            comment.setUserId(Integer.parseInt(userId));
-            comment.setDetail(detail);
-            commentDAO.addComment(comment);
-            response.sendRedirect("product-detail.jsp?productId=" + productId + "&userId=" + userId);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(addCommentServlet.class.getName()).log(Level.SEVERE, null, ex);
+        User auth = (User) request.getSession().getAttribute("auth");
+
+        if (auth == null) {
+            response.sendRedirect("login.jsp");
+        } else {
+            try {
+                String productId = request.getParameter("productId");
+                
+                String detail = request.getParameter("detail");
+
+                CommentDAO commentDAO = new CommentDAO(DBcon.getConnection());
+                Comment comment = new Comment();
+                comment.setProductId(Integer.parseInt(productId));
+                comment.setUserId(auth.getId());
+                comment.setDetail(detail);
+                commentDAO.addComment(comment);
+                request.setAttribute("productId", productId);
+                RequestDispatcher rd = request.getRequestDispatcher("product-detail.jsp");
+                rd.forward(request, response);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(addCommentServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
     }

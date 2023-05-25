@@ -13,7 +13,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Product;
+import model.User;
 
 /**
  *
@@ -57,19 +57,19 @@ public class productDetailServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String productId = request.getParameter("productId");
-           
+            User auth = (User) request.getSession().getAttribute("auth");
 
-            String userId = request.getParameter("userId");
-
-            request.setAttribute("productId", productId);
-            request.setAttribute("userId", userId);
-            RequestDispatcher rd = request.getRequestDispatcher("product-detail.jsp");
-            rd.forward(request, response);
-        } catch (Exception e) {
+            if (auth == null) {
+                response.sendRedirect("login.jsp");
+            } else {
+                request.setAttribute("productId", productId);
+                RequestDispatcher rd = request.getRequestDispatcher("product-detail.jsp");
+                rd.forward(request, response);
+            }
+        } catch (ServletException | IOException e) {
         }
     }
 
@@ -84,7 +84,7 @@ public class productDetailServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
     /**

@@ -82,7 +82,8 @@ public class registerServlet extends HttpServlet {
             String username = request.getParameter("username");
             String name = request.getParameter("name");
             String password = request.getParameter("password");
-            User user = new User(username, name, User.hashPassword(password));
+            String phone = request.getParameter("phone");
+            User user = new User(username, name, User.hashPassword(password), phone);
             try {
                 UserDAO userDAO = new UserDAO(DBcon.getConnection());
                 userDAO.addUser(user);
