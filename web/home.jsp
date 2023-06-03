@@ -24,11 +24,13 @@
     </head>
     <div class="header">
         <div class="navigation">
+            
             <a href="home.jsp">Home</a>
             <a href="order.jsp">Order</a>
             <a href="login.jsp">Login</a>
             <a href="logoutServlet">Logout</a>
-            <a style="float: right"><%= auth.getName()%> </a>
+            
+
         </div>
     </div>
 

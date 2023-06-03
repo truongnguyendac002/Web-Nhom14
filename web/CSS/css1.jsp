@@ -30,6 +30,8 @@
                 color: #fff;
                 margin-right: 10px;
             }
+            
+
 
             a{
                 text-decoration: none;
