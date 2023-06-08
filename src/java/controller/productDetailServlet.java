@@ -60,15 +60,11 @@ public class productDetailServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String productId = request.getParameter("productId");
-            User auth = (User) request.getSession().getAttribute("auth");
 
-            if (auth == null) {
-                response.sendRedirect("login.jsp");
-            } else {
-                request.setAttribute("productId", productId);
-                RequestDispatcher rd = request.getRequestDispatcher("product-detail.jsp");
-                rd.forward(request, response);
-            }
+            request.setAttribute("productId", productId);
+            RequestDispatcher rd = request.getRequestDispatcher("product-detail.jsp");
+            rd.forward(request, response);
+
         } catch (ServletException | IOException e) {
         }
     }

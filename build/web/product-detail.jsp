@@ -8,10 +8,33 @@
 <%@page import="dao.*" %>
 <%@page import="java.util.*" %>
 <%@ page import="java.lang.Integer" %>
-
-
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
+<% 
+    User auth=(User) request.getSession().getAttribute("auth"); 
+    if(auth !=null) {
+    request.setAttribute("auth", auth); 
+%>
+<style>
+    #login {
+        display: none;
+    }
+</style>
+<% 
+}
+else {
+%>
+<style>
+    #logout {
+        display: none;
+    }
+</style>
+<% 
+}
+
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +48,6 @@
         Product product = productDAO.getProductById(productIdInt);
         UserDAO userDAO = new UserDAO(DBcon.getConnection());
 
-        User auth = (User) request.getSession().getAttribute("auth");
         %>
         <style>
             .content {
@@ -74,7 +96,7 @@
                 cursor: pointer;
             }
             .comment-form input[type="text"] {
-                padding-right: 28px;
+                width: 800px;
             }
             .comment-list {
                 list-style-type: none;
@@ -105,10 +127,10 @@
     </head>
     <div class="header">
         <div class="navigation">
-            <a href="home.jsp">Home</a>
-            <a href="order.jsp">Order</a>
-            <a href="login.jsp">Login</a>
-            <a href="logoutServlet">Logout</a>
+            <a id="home" href="home.jsp">Home</a>
+            <a id="order" href="order.jsp">Order</a>
+            <a id="login" href="login.jsp">Login</a>
+            <a id="logout" href="logoutServlet">Logout</a>
         </div>
     </div>
     <body>

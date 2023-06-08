@@ -10,9 +10,25 @@
     User auth=(User) request.getSession().getAttribute("auth"); 
     if(auth !=null) {
     request.setAttribute("auth", auth); 
+%>
+<style>
+    #login {
+        display: none;
     }
-    ProductDAO pd = new ProductDAO(DBcon.getConnection());
-    List<Product> products = pd.getAllProducts();
+</style>
+<% 
+}
+else {
+%>
+<style>
+    #logout {
+        display: none;
+    }
+</style>
+<% 
+}
+ProductDAO pd = new ProductDAO(DBcon.getConnection());
+List<Product> products = pd.getAllProducts();
 %>
 <!DOCTYPE html>
 <html>
@@ -24,12 +40,12 @@
     </head>
     <div class="header">
         <div class="navigation">
-            
-            <a href="home.jsp">Home</a>
-            <a href="order.jsp">Order</a>
-            <a href="login.jsp">Login</a>
-            <a href="logoutServlet">Logout</a>
-            
+
+            <a id="home" href="home.jsp">Home</a>
+            <a id="order" href="order.jsp">Order</a>
+            <a id="login" href="login.jsp">Login</a>
+            <a id="logout" href="logoutServlet">Logout</a>
+
 
         </div>
     </div>
