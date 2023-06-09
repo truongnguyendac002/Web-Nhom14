@@ -15,7 +15,7 @@ if(auth != null) {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
-        <%@include file = "CSS/css1.jsp" %>
+        <%@include file = "CSS/home-css.jsp" %>
 
     </head>
     <div class="header">
