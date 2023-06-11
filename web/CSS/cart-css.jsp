@@ -31,10 +31,13 @@
                 margin-right: 10px;
             }
             
-
-
             a{
                 text-decoration: none;
             }
+            
+            div .form-group {
+                justify-content: center;
+            }
         </style>
+    </head>
 </html>
