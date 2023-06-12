@@ -40,7 +40,7 @@ else {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Product detail</title>
-        <%@include file = "CSS/css1.jsp" %>
+        <%@include file = "CSS/home-css.jsp" %>
         <%
         String productId =(String)request.getAttribute("productId");
         int productIdInt = Integer.parseInt(productId);
@@ -128,7 +128,7 @@ else {
     <div class="header">
         <div class="navigation">
             <a id="home" href="home.jsp">Home</a>
-            <a id="order" href="order.jsp">Order</a>
+            <a id="order" href="cart.jsp">Cart</a>
             <a id="login" href="login.jsp">Login</a>
             <a id="logout" href="logoutServlet">Logout</a>
         </div>
