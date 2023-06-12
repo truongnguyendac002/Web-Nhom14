@@ -64,7 +64,7 @@ List<Product> products = pd.getAllProducts();
                     <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
                     <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>">Xem chi tiết</a>
 
-                    <a class="btn-them-gio-hang">Thêm vào giỏ hàng</a>
+                    <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= p.getId() %>">Thêm vào giỏ hàng</a>
                 </div>
                 <% }
                 }
