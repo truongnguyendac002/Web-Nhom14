@@ -1,12 +1,19 @@
 <%-- Document : register Created on : May 22, 2023, 10:10:20 PM Author : truon --%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
+<% 
+User auth = (User) request.getSession().getAttribute("auth");
+
+if(auth != null) {
+    response.sendRedirect("home.jsp");
+}
+%>
 <!DOCTYPE html>
 <html>
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Register</title>
-        <%@include file = "CSS/home-css.jsp" %>
+        <%@include file = "CSS/register-css.jsp" %>
     </head>
     <div class="header">
         <div class="navigation">
@@ -29,6 +36,32 @@
                 <input type="text" id="phone" name="phone" required><br><br>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required><br><br>
+                
+                
+                <p class="error-message">Tên tại khoản đã tồn tại</p>
+                <%
+                    String error = (String) request.getSession().getAttribute("errorRegister");
+                    if (error != null && error.equals("true")) { %>
+                    <style>
+                    .error-message {
+                    display: block;
+                    padding-bottom: 10px;
+                    color: #DC143C;
+                    animation: rung 0.5s;;
+                    </style>
+                    <% } 
+                    else { %>
+                    <style>
+                    .error-message {
+                    display: none;
+                    }
+                    </style>
+                    <%
+                    }
+                    request.getSession().setAttribute("errorRegister", "false");
+
+                %>
+                
                 <input type="submit" value="Đăng ký">
 
             </form>

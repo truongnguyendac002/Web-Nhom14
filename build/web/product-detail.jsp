@@ -13,25 +13,6 @@
 
 <% 
     User auth=(User) request.getSession().getAttribute("auth"); 
-    if(auth !=null) {
-    request.setAttribute("auth", auth); 
-%>
-<style>
-    #login {
-        display: none;
-    }
-</style>
-<% 
-}
-else {
-%>
-<style>
-    #logout {
-        display: none;
-    }
-</style>
-<% 
-}
 
 %>
 
@@ -40,7 +21,7 @@ else {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Product detail</title>
-        <%@include file = "CSS/home-css.jsp" %>
+        <%@include file = "CSS/product-detail-css.jsp" %>
         <%
         String productId =(String)request.getAttribute("productId");
         int productIdInt = Integer.parseInt(productId);
@@ -49,81 +30,6 @@ else {
         UserDAO userDAO = new UserDAO(DBcon.getConnection());
 
         %>
-        <style>
-            .content {
-                width: 100%;
-                max-width: 800px;
-                margin: 20px auto;
-                padding: 20px;
-                background-color: #fff;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            }
-
-            h2 {
-                text-align: center;
-                color: #333;
-                margin-bottom: 20px;
-            }
-
-            .content p {
-                margin-bottom: 10px;
-            }
-
-            .content img {
-                width: 100%;
-                height: auto;
-                display: block;
-                margin-top: 10px;
-            }
-            .comment {
-                margin-top: 20px;
-            }
-
-            .comment-form {
-                margin-bottom: 20px;
-            }
-
-
-
-            .comment-form input[type="submit"] {
-                padding: 8px 16px;
-                margin-top: 10px;
-                background-color: #337ab7;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-            .comment-form input[type="text"] {
-                width: 800px;
-            }
-            .comment-list {
-                list-style-type: none;
-                padding: 0;
-            }
-
-            .comment-item {
-                margin-bottom: 10px;
-                padding: 10px;
-                background-color: #f9f9f9;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-            }
-
-            .comment-user {
-                font-weight: bold;
-            }
-
-            .comment-content {
-                margin-top: 5px;
-            }
-            .btn-them-gio-hang {
-                /* background-color: #5cb85c; */
-                padding: 8px;
-                width: fit-content;
-            }
-        </style>
     </head>
     <div class="header">
         <div class="navigation">
@@ -136,11 +42,10 @@ else {
     <body>
         <div class="content" >
 
-            <h2>Chi tiết sản phẩm</h2>
-            <p><strong>ID:</strong> <%= product.getId() %></p>
+            <h2><%= product.getName() %></h2>
             <p><strong>Tên sản phẩm:</strong> <%= product.getName() %></p>
             <p><strong>Loại hàng:</strong> <%= product.getCategory() %></p>
-            <p><strong>Giá:</strong> <%= product.getPrice() %> VNÐ</p>
+            <p><strong>Giá:</strong> <%= Double.valueOf(product.getPrice() ).intValue() %> VNÐ</p>
             <a class="btn-them-gio-hang">Thêm vào giỏ hàng</a>
             <img src="./product-image/<%= product.getImage() %>" alt="Product Image">
         </div>

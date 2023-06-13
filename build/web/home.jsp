@@ -7,30 +7,18 @@
 <%@page import="java.util.*" %>
 
 <% 
-    User auth=(User) request.getSession().getAttribute("auth"); 
-    if(auth !=null) {
-    request.setAttribute("auth", auth); 
-%>
-<style>
-    #login {
-        display: none;
-    }
-</style>
-<% 
-}
-else {
-%>
-<style>
-    #logout {
-        display: none;
-    }
-
-</style>
-<% 
-}
+User auth=(User) request.getSession().getAttribute("auth"); 
 ProductDAO pd = new ProductDAO(DBcon.getConnection());
 List<Product> products = pd.getAllProducts();
 %>
+
+<%
+ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+if(cart_list != null) {
+    request.setAttribute("cart_list", cart_list);
+}
+%>
+
 <!DOCTYPE html>
 <html>
 
@@ -43,7 +31,7 @@ List<Product> products = pd.getAllProducts();
         <div class="navigation">
 
             <a id="home" href="home.jsp">Home</a>
-            <a id="cart" href="cart.jsp">Cart</a>
+            <a id="cart" href="cart.jsp">Cart<span class="badge badge-warning label-warning">${ cart_list.size() }</span></a>
             <a id="login" href="login.jsp">Login</a>
             <a id="logout" href="logoutServlet">Logout</a>
 
@@ -61,10 +49,9 @@ List<Product> products = pd.getAllProducts();
                 %>
                 <div class="the-san-pham">
                     <h3 class="ten-san-pham"><%= p.getName() %>  </h3>
-                    <h4 class="gia-san-pham"><%= p.getPrice() %> VNÐ </h4>
+                    <h4 class="gia-san-pham"><%= Double.valueOf(p.getPrice()).intValue()%> VNÐ </h4>
                     <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
                     <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>">Xem chi tiết</a>
-
                     <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= p.getId() %>">Thêm vào giỏ hàng</a>
                 </div>
                 <% }

@@ -11,6 +11,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
+             @keyframes rung {
+                0% {
+                    transform: translateX(0);
+                }
+                10%, 30%, 50%, 70%, 90% {
+                    transform: translateX(-4px);
+                }
+                20%, 40%, 60%, 80% {
+                    transform: translateX(4px);
+                }
+                100% {
+                    transform: translateX(0);
+                }
+            }
             * {
                 margin: 0px;
                 padding: 0px;
@@ -29,12 +43,10 @@
                 text-align: center;
             }
 
-            .navigation a {
-                color: #fff;
-                margin-right: 10px;
-            }
 
             a {
+                color: #fff;
+                margin-right: 10px;
                 text-decoration: none;
             }
 
@@ -88,79 +100,11 @@
                 padding: 20px;
             }
 
-            .Tieu-de {
-                font-size: 24px;
-                font-weight: bold;
-                margin-bottom: 20px;
-            }
+           
 
-            .hang {
-                display: flex;
-                flex-wrap: wrap;
-            }
-
-
-
-            .the-san-pham {
-                background-color: #fff;
-                padding: 10px;
-                margin: 10px;
-                width: 29.33%;
-                border-radius: 5px;
-                text-align: center;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            }
-
-            .ten-san-pham {
-                font-size: 18px;
-                margin-bottom: 10px;
-            }
-
-            .the-san-pham img {
-                width: 100%;
-                height: auto;
-                margin-bottom: 10px;
-            }
-
-            .btn-chi-tiet,
-            .btn-them-gio-hang {
-                display: block;
-                width: 100%;
-                padding: 8px 0px;
-                color: #fff;
-                border: none;
-                border-radius: 4px;
-                font-size: 14px;
-                cursor: pointer;
-                margin-bottom: 5px;
-            }
-
-            .btn-them-gio-hang {
-                background-color: #5cb85c;
-            }
-            .btn-chi-tiet {
-                background-color: #337ab7;
-            }
-            h4.gia-san-pham {
-                padding-bottom: 11px;
-            }
-<<<<<<< HEAD
             
-            .badge {
-                padding-left: 9px;
-                padding-right: 9px;
-                -webkit-border-radius: 9px;
-                -moz-border-radius: 9px;
-                border-radius: 9px;
-            }
 
-            .label-warning,
-            .badge-warning {
-                background-color: #c67605;
-            }
-=======
->>>>>>> c1f22f446f15e62fc79826ca79a1489911d29634
+            
         </style>
     </head>
     <% 

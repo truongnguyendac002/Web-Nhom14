@@ -83,9 +83,12 @@
 
             .content {
                 width: 100%;
-                max-width: 1200px;
-                margin: 0 auto;
+                max-width: 800px;
+                margin: 20px auto;
                 padding: 20px;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             }
 
             .Tieu-de {
@@ -123,7 +126,7 @@
                 margin-bottom: 10px;
             }
 
-            .btn-chi-tiet,
+            
             .btn-them-gio-hang {
                 display: block;
                 width: 100%;
@@ -139,28 +142,70 @@
             .btn-them-gio-hang {
                 background-color: #5cb85c;
             }
-            .btn-chi-tiet {
-                background-color: #337ab7;
-            }
+            
             h4.gia-san-pham {
                 padding-bottom: 11px;
             }
-<<<<<<< HEAD
-            
-            .badge {
-                padding-left: 9px;
-                padding-right: 9px;
-                -webkit-border-radius: 9px;
-                -moz-border-radius: 9px;
-                border-radius: 9px;
+            h2 {
+                text-align: center;
+                color: #333;
+                margin-bottom: 20px;
             }
 
-            .label-warning,
-            .badge-warning {
-                background-color: #c67605;
+            .content p {
+                margin-bottom: 10px;
             }
-=======
->>>>>>> c1f22f446f15e62fc79826ca79a1489911d29634
+
+            .content img {
+                width: 100%;
+                height: auto;
+                display: block;
+                margin-top: 10px;
+            }
+            .comment {
+                margin-top: 20px;
+            }
+
+            .comment-form {
+                margin-bottom: 20px;
+            }
+
+            .comment-form input[type="submit"] {
+                padding: 8px 16px;
+                margin-top: 10px;
+                background-color: #337ab7;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .comment-form input[type="text"] {
+                width: 800px;
+            }
+            .comment-list {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .comment-item {
+                margin-bottom: 10px;
+                padding: 10px;
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+
+            .comment-user {
+                font-weight: bold;
+            }
+
+            .comment-content {
+                margin-top: 5px;
+            }
+            .btn-them-gio-hang {
+                padding: 8px;
+                width: fit-content;
+            }
         </style>
     </head>
     <% 

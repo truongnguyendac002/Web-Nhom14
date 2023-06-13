@@ -34,14 +34,15 @@ public class loginServlet extends HttpServlet {
     private static String hashPassword(String password) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         byte[] hashedBytes = md.digest(password.getBytes());
-        
+
         StringBuilder sb = new StringBuilder();
         for (byte b : hashedBytes) {
             sb.append(String.format("%02x", b));
         }
-        
+
         return sb.toString();
     }
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -88,18 +89,24 @@ public class loginServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            String email = request.getParameter("username");
+            String username = request.getParameter("username");
             String password = request.getParameter("password");
 
             try {
                 UserDAO udao = new UserDAO(DBcon.getConnection());
-                User user = udao.userLogin(email, User.hashPassword(password) );
+                User user = udao.userLogin(username, User.hashPassword(password));
 
                 if (user != null) {
+                    request.getSession().setAttribute("errorLogin", "false");
                     request.getSession().setAttribute("auth", user);
-                    response.sendRedirect("home.jsp");
+                    if (user.getEmail().equals("admin")) {
+                        response.sendRedirect("admin.jsp");
+                    } else {
+                        response.sendRedirect("home.jsp");
+                    }
                 } else {
-                    out.println("<script>alert('Tài khoản hoặc mật khẩu không hợp lệ. Vui lòng thử lại.'); window.location.href='login.jsp';</script>");
+                    request.getSession().setAttribute("errorLogin", "true");
+                    response.sendRedirect("login.jsp");
                 }
 
             } catch (ClassNotFoundException e) {
