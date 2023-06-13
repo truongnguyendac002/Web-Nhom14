@@ -3,8 +3,11 @@
     Created on : May 23, 2023, 12:52:21 PM
     Author     : truon
 --%>
+<!DOCTYPE html>
 <%@page import="model.*" %>
+<%@page import="dao.*" %>
 <%@page import="java.util.*" %>
+<%@page import="connection.DBcon" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% 
 User auth = (User) request.getSession().getAttribute("auth");
@@ -34,12 +37,12 @@ else{
 ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
 List<Cart> cartProduct = null;
 if(cart_list != null) {
-    productDao pDao = new productDao(DbCon.getConnection());
+    ProductDAO pDao = new ProductDAO(DbCon.getConnection());
     cartProduct = pDao.getCartProducts(cart_list);
     request.setAttribute("cart_list", cart_list);
 %>
 
-<!DOCTYPE html>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
