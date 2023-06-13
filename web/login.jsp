@@ -61,7 +61,7 @@ if(auth != null) {
             .error-message {
             display: block;
             padding-bottom: 10px;
-            color: red;
+            color: #DC143C;
             animation: rung 0.5s;;
             </style>
             <% } 

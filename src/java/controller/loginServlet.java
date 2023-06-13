@@ -89,12 +89,12 @@ public class loginServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            String email = request.getParameter("username");
+            String username = request.getParameter("username");
             String password = request.getParameter("password");
 
             try {
                 UserDAO udao = new UserDAO(DBcon.getConnection());
-                User user = udao.userLogin(email, User.hashPassword(password));
+                User user = udao.userLogin(username, User.hashPassword(password));
 
                 if (user != null) {
                     request.getSession().setAttribute("errorLogin", "false");

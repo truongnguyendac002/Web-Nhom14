@@ -25,12 +25,12 @@ public class UserDAO {
         this.con = con;
     }
 
-    public User userLogin(String email, String password) {
+    public User userLogin(String username, String password) {
         User user = null;
         try {
-            query = "select * from users where email = ? and password = ?";
+            query = "select * from users where username = ? and password = ?";
             pst = this.con.prepareStatement(query);
-            pst.setString(1, email);
+            pst.setString(1, username);
             pst.setString(2, password);
             rs = pst.executeQuery();
 
@@ -38,7 +38,7 @@ public class UserDAO {
                 user = new User();
                 user.setId(rs.getInt("id"));
                 user.setName(rs.getString("name"));
-                user.setEmail(rs.getString("email"));
+                user.setEmail(rs.getString("username"));
 
             }
         } catch (SQLException e) {
@@ -53,7 +53,7 @@ public class UserDAO {
         }
 
         try {
-            query = "INSERT INTO users (name, email, password, phone) VALUES (?, ?, ?, ?)";
+            query = "INSERT INTO users (name, username, password, phone) VALUES (?, ?, ?, ?)";
 
             pst = this.con.prepareStatement(query);
             pst.setString(1, user.getName());
@@ -65,12 +65,12 @@ public class UserDAO {
         }
     }
 
-    private boolean isEmailExists(String email) throws SQLException {
+    public boolean isEmailExists(String username) throws SQLException {
         query = "SELECT COUNT(*) FROM users WHERE username = ?";
         try {
             pst = this.con.prepareStatement(query);
 
-            pst.setString(1, email);
+            pst.setString(1, username);
 
             rs = pst.executeQuery();
             if (rs.next()) {
@@ -95,7 +95,7 @@ public class UserDAO {
                 User row = new User();
                 row.setId(rs.getInt("id"));
                 row.setName(rs.getString("name"));
-                row.setEmail(rs.getString("email"));
+                row.setEmail(rs.getString("username"));
                 row.setPhone(rs.getString("phone"));
 
                 u = row;

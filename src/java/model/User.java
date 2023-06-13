@@ -14,12 +14,12 @@ import java.security.NoSuchAlgorithmException;
 public class User {
 //id INT IDENTITY(1,1) PRIMARY KEY,
 //    name VARCHAR(250) NOT NULL,
-//    email VARCHAR(250) NOT NULL,
+//    username VARCHAR(250) NOT NULL,
 //    password VARCHAR(250) NOT NULL,
-//    CONSTRAINT UC_email UNIQUE (email)    
+//    CONSTRAINT UC_username UNIQUE (username)    
     
     private int id;
-    private String name, email, password, phone;
+    private String name, username, password, phone;
 
     public User() {
     }
@@ -35,9 +35,9 @@ public class User {
         return sb.toString();
     }
     
-    public User(String email, String name, String password, String phone) {
+    public User(String username, String name, String password, String phone) {
         this.name = name;
-        this.email = email;
+        this.username = username;
         this.password = password;
         this.phone = phone;
 
@@ -70,11 +70,11 @@ public class User {
     }
 
     public String getEmail() {
-        return email;
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

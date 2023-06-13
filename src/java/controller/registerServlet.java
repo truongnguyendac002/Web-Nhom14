@@ -86,8 +86,16 @@ public class registerServlet extends HttpServlet {
             User user = new User(username, name, User.hashPassword(password), phone);
             try {
                 UserDAO userDAO = new UserDAO(DBcon.getConnection());
-                userDAO.addUser(user);
-                response.sendRedirect("login.jsp");
+                
+                if (userDAO.isEmailExists(username)){
+                    request.getSession().setAttribute("errorRegister", "true");
+                    response.sendRedirect("register.jsp");
+                }
+                else {
+                    userDAO.addUser(user);
+                    response.sendRedirect("login.jsp");
+                }
+                
             } catch (IOException | ClassNotFoundException | SQLException e) {
                 
             }
