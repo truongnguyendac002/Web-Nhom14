@@ -11,28 +11,6 @@
 <% 
 User auth = (User) request.getSession().getAttribute("auth");
 
-if(auth == null) {
-    
-%>
-<style>
-    #logout {
-        display: none;
-    }
-</style>
-<% 
-}
-else{
-%>
-<style>
-    #login {
-        display: none;
-    }
-</style>
-<% 
-}
-%>
-
-<%
 ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
 List<Cart> cartProduct = null;
 if(cart_list != null) {

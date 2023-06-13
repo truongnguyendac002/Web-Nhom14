@@ -1,5 +1,12 @@
 <%-- Document : register Created on : May 22, 2023, 10:10:20 PM Author : truon --%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
+<% 
+User auth = (User) request.getSession().getAttribute("auth");
+
+if(auth != null) {
+    response.sendRedirect("home.jsp");
+}
+%>
 <!DOCTYPE html>
 <html>
 

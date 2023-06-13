@@ -7,27 +7,7 @@
 <%@page import="java.util.*" %>
 
 <% 
-    User auth=(User) request.getSession().getAttribute("auth"); 
-    if(auth !=null) {
-    request.setAttribute("auth", auth); 
-%>
-<style>
-    #login {
-        display: none;
-    }
-</style>
-<% 
-}
-else {
-%>
-<style>
-    #logout {
-        display: none;
-    }
-
-</style>
-<% 
-}
+User auth=(User) request.getSession().getAttribute("auth"); 
 ProductDAO pd = new ProductDAO(DBcon.getConnection());
 List<Product> products = pd.getAllProducts();
 %>
@@ -64,7 +44,6 @@ List<Product> products = pd.getAllProducts();
                     <h4 class="gia-san-pham"><%= p.getPrice() %> VNÐ </h4>
                     <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
                     <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>">Xem chi tiết</a>
-
                     <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= p.getId() %>">Thêm vào giỏ hàng</a>
                 </div>
                 <% }

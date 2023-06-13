@@ -1,21 +1,24 @@
-<%-- 
-    Document   : css1
-    Created on : May 23, 2023, 12:55:38 PM
-    Author     : truon
---%>
+<%-- Document : css1 Created on : May 23, 2023, 12:55:38 PM Author : truon --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@page import="connection.DBcon" %>
+<%@page import="model.*" %>
+<%@page import="dao.*" %>
+<%@page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
-            *{
+            * {
                 margin: 0px;
                 padding: 0px;
             }
+
+
             body {
-                font-family: Arial, sans-serif;
+                font-family: Arial;
                 background-color: #f2f2f2;
             }
 
@@ -30,10 +33,8 @@
                 color: #fff;
                 margin-right: 10px;
             }
-            
 
-
-            a{
+            a {
                 text-decoration: none;
             }
 
@@ -86,6 +87,7 @@
                 margin: 0 auto;
                 padding: 20px;
             }
+
             .Tieu-de {
                 font-size: 24px;
                 font-weight: bold;
@@ -100,7 +102,7 @@
 
 
             .the-san-pham {
-                background-color: #f2f2f2;
+                background-color: #fff;
                 padding: 10px;
                 margin: 10px;
                 width: 29.33%;
@@ -126,7 +128,6 @@
                 display: block;
                 width: 100%;
                 padding: 8px 0px;
-                background-color: #337ab7;
                 color: #fff;
                 border: none;
                 border-radius: 4px;
@@ -138,12 +139,34 @@
             .btn-them-gio-hang {
                 background-color: #5cb85c;
             }
-
+            .btn-chi-tiet {
+                background-color: #337ab7;
+            }
             h4.gia-san-pham {
                 padding-bottom: 11px;
             }
-
         </style>
     </head>
+    <% 
+if(auth !=null) {
+    %>
+    <style>
+        #login {
+            display: none;
+        }
+    </style>
+    <% 
+    }
+    else {
+    %>
+    <style>
+        #logout {
+            display: none;
+        }
+
+    </style>
+    <% 
+    }
+    %>
 
 </html>

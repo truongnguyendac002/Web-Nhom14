@@ -13,25 +13,6 @@
 
 <% 
     User auth=(User) request.getSession().getAttribute("auth"); 
-    if(auth !=null) {
-    request.setAttribute("auth", auth); 
-%>
-<style>
-    #login {
-        display: none;
-    }
-</style>
-<% 
-}
-else {
-%>
-<style>
-    #logout {
-        display: none;
-    }
-</style>
-<% 
-}
 
 %>
 
