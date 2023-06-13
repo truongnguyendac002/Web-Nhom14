@@ -3,7 +3,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page import="connection.DBcon" %>
 <%@page import="model.*" %>
-<%@page import="dao.ProductDAO" %>
+<%@page import="dao.*" %>
 <%@page import="java.util.*" %>
 
 <% 
@@ -24,6 +24,7 @@ else {
     #logout {
         display: none;
     }
+
 </style>
 <% 
 }
@@ -42,7 +43,7 @@ List<Product> products = pd.getAllProducts();
         <div class="navigation">
 
             <a id="home" href="home.jsp">Home</a>
-            <a id="order" href="cart.jsp">Cart</a>
+            <a id="cart" href="cart.jsp">Cart</a>
             <a id="login" href="login.jsp">Login</a>
             <a id="logout" href="logoutServlet">Logout</a>
 

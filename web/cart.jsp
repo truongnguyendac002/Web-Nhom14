@@ -5,12 +5,14 @@
 --%>
 <%@page import="model.*" %>
 <%@page import="java.util.*" %>
+<%@page import="connection.DBcon" %>
+<%@page import="dao.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% 
 User auth = (User) request.getSession().getAttribute("auth");
 
 if(auth == null) {
-    response.sendRedirect("home.jsp");
+    
 %>
 <style>
     #logout {
@@ -34,9 +36,10 @@ else{
 ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
 List<Cart> cartProduct = null;
 if(cart_list != null) {
-    productDao pDao = new productDao(DbCon.getConnection());
+    ProductDAO pDao = new ProductDAO(DBcon.getConnection());
     cartProduct = pDao.getCartProducts(cart_list);
     request.setAttribute("cart_list", cart_list);
+    }
 %>
 
 <!DOCTYPE html>
