@@ -13,24 +13,7 @@ if(auth != null) {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Register</title>
-        <%@include file = "CSS/home-css.jsp" %>
-        <style>
-            @keyframes rung {
-                0% {
-                    transform: translateX(0);
-                }
-                10%, 30%, 50%, 70%, 90% {
-                    transform: translateX(-4px);
-                }
-                20%, 40%, 60%, 80% {
-                    transform: translateX(4px);
-                }
-                100% {
-                    transform: translateX(0);
-                }
-            }
-
-        </style>
+        <%@include file = "CSS/register-css.jsp" %>
     </head>
     <div class="header">
         <div class="navigation">
