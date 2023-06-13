@@ -145,22 +145,6 @@
             h4.gia-san-pham {
                 padding-bottom: 11px;
             }
-<<<<<<< HEAD
-            
-            .badge {
-                padding-left: 9px;
-                padding-right: 9px;
-                -webkit-border-radius: 9px;
-                -moz-border-radius: 9px;
-                border-radius: 9px;
-            }
-
-            .label-warning,
-            .badge-warning {
-                background-color: #c67605;
-            }
-=======
->>>>>>> c1f22f446f15e62fc79826ca79a1489911d29634
         </style>
     </head>
     <% 
