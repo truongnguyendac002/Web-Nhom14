@@ -145,10 +145,23 @@
             h4.gia-san-pham {
                 padding-bottom: 11px;
             }
+            #adminPage {
+            display: none;
+            }
         </style>
     </head>
     <% 
 if(auth !=null) {
+    if (auth.getEmail().equals("admin")){
+    %>
+    <style>
+        #adminPage {
+            display: inline;
+        }
+    </style>
+    <% 
+        }
+
     %>
     <style>
         #login {
@@ -158,11 +171,13 @@ if(auth !=null) {
     <% 
     }
     else {
+
     %>
     <style>
         #logout {
             display: none;
         }
+        
 
     </style>
     <% 

@@ -23,6 +23,7 @@ List<Product> products = pd.getAllProducts();
         <div class="navigation">
 
             <a id="home" href="home.jsp">Home</a>
+            <a id="adminPage" href="admin.jsp">Admin</a>
             <a id="cart" href="cart.jsp">Cart</a>
             <a id="login" href="login.jsp">Login</a>
             <a id="logout" href="logoutServlet">Logout</a>

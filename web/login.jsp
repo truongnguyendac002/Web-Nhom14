@@ -45,6 +45,7 @@ if(auth != null) {
                         color: #DC143C;
                         animation: rung 0.5s;
                         ;
+                    }
                     </style>
                     <% } 
                 else { %>
