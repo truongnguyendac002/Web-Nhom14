@@ -34,15 +34,7 @@ public class removeFromCart extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet removeFromCart</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet removeFromCart at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+           
         }
     } 
 
@@ -54,36 +46,11 @@ public class removeFromCart extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-//    @Override
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-//    throws ServletException, IOException {
-//        processRequest(request, response);
-//        
-//        response.setContentType("text/html;charset=UTF-8");
-//        try(PrintWriter out = response.getWriter()) {
-//            String id = request.getParameter("id");
-//            if(id != null) {
-//                ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");
-//                if(cart_list != null) {
-//                    for(Cart c:cart_list) {
-//                        if(c.getId() == Integer.parseInt(id)) {
-//                            cart_list.remove(cart_list.indexOf(c));
-//                            break;
-//                        }
-//                    }
-//                    response.sendRedirect("cart.jsp");
-//                }
-//            } else {
-//                response.sendRedirect("cart.jsp");
-//            }
-//        }
-//    }
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
-
+        
+        
         response.setContentType("text/html;charset=UTF-8");
         try(PrintWriter out = response.getWriter()) {
             String id = request.getParameter("id");
@@ -92,12 +59,9 @@ public class removeFromCart extends HttpServlet {
                 if(cart_list != null) {
                     for(Cart c:cart_list) {
                         if(c.getId() == Integer.parseInt(id)) {
-                            cart_list.remove(c);
+                            cart_list.remove(cart_list.indexOf(c));
                             break;
                         }
-                    }
-                    if(cart_list.isEmpty()) {
-                        request.getSession().removeAttribute("cart-list");
                     }
                     response.sendRedirect("cart.jsp");
                 }
@@ -118,7 +82,26 @@ public class removeFromCart extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+
+        
+        response.setContentType("text/html;charset=UTF-8");
+        try(PrintWriter out = response.getWriter()) {
+            String id = request.getParameter("id");
+            if(id != null) {
+                ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");
+                if(cart_list != null) {
+                    for(Cart c:cart_list) {
+                        if(c.getId() == Integer.parseInt(id)) {
+                            cart_list.remove(cart_list.indexOf(c));
+                            break;
+                        }
+                    }
+                    response.sendRedirect("cart.jsp");
+                }
+            } else {
+                response.sendRedirect("cart.jsp");
+            }
+        }
     }
 
     /** 
