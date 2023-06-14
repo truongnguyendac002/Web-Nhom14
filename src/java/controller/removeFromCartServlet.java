@@ -20,7 +20,7 @@ import model.*;
  * @author Asus
  */
 @WebServlet(name="removeFromCart", urlPatterns={"/remove-from-cart"})
-public class removeFromCart extends HttpServlet {
+public class removeFromCartServlet extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -49,7 +49,6 @@ public class removeFromCart extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        
         
         response.setContentType("text/html;charset=UTF-8");
         try(PrintWriter out = response.getWriter()) {
@@ -83,8 +82,6 @@ public class removeFromCart extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
 
-        
-        response.setContentType("text/html;charset=UTF-8");
         try(PrintWriter out = response.getWriter()) {
             String id = request.getParameter("id");
             if(id != null) {

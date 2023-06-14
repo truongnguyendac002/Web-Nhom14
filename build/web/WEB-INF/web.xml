@@ -22,7 +22,7 @@
     </servlet>
     <servlet>
         <servlet-name>removeFromCart</servlet-name>
-        <servlet-class>controller.removeFromCart</servlet-class>
+        <servlet-class>controller.removeFromCartServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>

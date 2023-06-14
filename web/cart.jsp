@@ -79,11 +79,11 @@ if(cart_list != null) {
                         <td><%= c.getCategory() %></td>
                         <td><%= dcf.format(c.getPrice()) %></td>
                         <td>
-                            <form action="" method="post" class="form-inline">
+                            <form action="buy-now" method="post" class="form-inline">
                                 <input type="hidden" name="id" value="<%= c.getId() %>" class="form-input">
-                                <div class="form-group d-flex justify-content-between w-50">
+                                <div class="form-group d-flex justify-content-between ">
                                     <a class="btn btn-sm btn-decre" href="incDecQuantity?action=dec&id=<%= c.getId() %>"><i class="fas fa-minus-square"></i></a>
-                                    <input type="text" name="quantity" class="form-control w-30" value="<%= c.getQuantity() %>" readonly> <!--So luong sp-->
+                                    <input type="text" name="quantity" class="form-control " value="<%= c.getQuantity() %>" readonly> <!--So luong sp-->
                                     <a class="btn btn-sm btn-incre" href="incDecQuantity?action=inc&id=<%= c.getId() %>"><i class="fas fa-plus-square"></i></a>
                                     <button type="submit" class="btn btn-primary btn-sm">Mua</button>
                                 </div>
