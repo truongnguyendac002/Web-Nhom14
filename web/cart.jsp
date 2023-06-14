@@ -56,18 +56,18 @@ if(cart_list != null) {
     <body>
         <div class="container">
             <div class="d-flex py-3">
-                <h3>Tong gia: ${ (total>0)?dcf.format(total):0}₫ </h3>
-                <a class="mx-3 btn btn-primary">Thanh toan</a>
+                <h3>Tổng giá: ${ (total>0)?dcf.format(total):0}₫ </h3>
+                <a class="mx-3 btn btn-primary">Thanh toán</a>
             </div>
             <table class="table table-lought">
                 <thead>
                     <tr>
-                        <th scope="col">Ten san pham</th>
-                        <th scope="col">Phan loai</th>
-                        <th scope="col">Ðon giá</th>
-                        <th scope="col">So luong</th>
-                        <th scope="col">Thanh tien</th>
-                        <th scope="col">Xoa san pham</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Phân loại</th>
+                        <th scope="col">Ðơn giá</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Thành tiền</th>
+                        <th scope="col">Xóa sản phẩm</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -93,7 +93,7 @@ if(cart_list != null) {
                         <!--<td><a class="btn btn-sm btn-danger" href="remove-from-cart?id=<%= c.getId() %>">XOA</a></td>-->
                         <td>
                             <form method="post" action="remove-from-cart?id=<%= c.getId() %>">
-                                <button class="btn btn-sm btn-danger" type="submit">XOA</button>
+                                <button class="btn btn-sm btn-danger" type="submit">Xóa</button>
                             </form>
                         </td>
                     </tr>
