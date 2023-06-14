@@ -60,6 +60,16 @@ if(cart_list != null) {
                     </div>
                     <% }
 
+                %>
+                <div class="the-san-pham">
+                    <h3 class="ten-san-pham"><%= p.getName() %>  </h3>
+                    <h4 class="gia-san-pham"><%= Double.valueOf(p.getPrice()).intValue()%> VNÐ </h4>
+                    <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
+                    <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>">Xem chi tiết</a>
+                    <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= p.getId() %>">Thêm vào giỏ hàng</a>
+                    <a class="btn-mua-ngay" href="buy-now?quantity=1&id<%= p.getId()%>">Mua ngay</a>
+                </div>
+                <% }
                 }
                 %>
             </div>

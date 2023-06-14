@@ -124,7 +124,8 @@
             }
 
             .btn-chi-tiet,
-            .btn-them-gio-hang {
+            .btn-them-gio-hang,
+            .btn-mua-ngay{
                 display: block;
                 width: 100%;
                 padding: 8px 0px;
@@ -142,6 +143,10 @@
             .btn-chi-tiet {
                 background-color: #337ab7;
             }
+            .btn-mua-ngay {
+                background-color: #ccc;
+            }
+            
             h4.gia-san-pham {
                 padding-bottom: 11px;
             }
