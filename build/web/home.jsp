@@ -43,6 +43,11 @@ if(cart_list != null) {
     <body>
         <div class="content">
             <div class="Tieu-de">Tất cả sản phẩm</div>
+            <div class="category-buttons">
+                <a href="category.jsp?category=male">Đồ nam</a>
+                <a href="category.jsp?category=female">Đồ nữ</a>
+                <a href="category.jsp?category=kids">Đồ trẻ em</a>
+            </div>
             <div class="hang">
                 <%
                 if( !products.isEmpty()) {

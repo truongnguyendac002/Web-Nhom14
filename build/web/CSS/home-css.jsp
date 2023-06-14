@@ -171,6 +171,24 @@
             display: none;
             }
         </style>
+        <style>
+            .category-buttons {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+
+            .category-buttons a {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #337ab7;
+                color: #fff;
+                border-radius: 5px;
+                margin-right: 10px;
+                text-decoration: none;
+            }
+    </style>
+
     </head>
     <% 
 if(auth !=null) {
