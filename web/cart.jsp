@@ -87,7 +87,6 @@ if(cart_list != null) {
                                     <a class="btn btn-sm btn-incre" href="incDecQuantity?action=inc&id=<%= c.getId() %>"><i class="fas fa-plus-square"></i></a>
                                     <button type="submit" class="btn btn-primary btn-sm">Mua</button>
                                 </div>
-
                             </form>
                         </td>
                         <td><%= dcf.format(c.getPrice()) %></td>
