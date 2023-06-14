@@ -102,6 +102,15 @@ public class buyNowServlet extends HttpServlet {
                 boolean result = orderDao.insertOrder(orderModel);
                 
                 if(result) {
+                    ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");
+                    if(cart_list != null) {
+                        for(Cart c:cart_list) {
+                            if(c.getId() == Integer.parseInt(productId)) {
+                                cart_list.remove(cart_list.indexOf(c));
+                                break;
+                            }
+                        }
+                    }
                     response.sendRedirect("orders.jsp");
                 } else {
                     out.println("fail");
