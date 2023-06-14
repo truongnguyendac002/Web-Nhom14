@@ -180,7 +180,7 @@
                 cursor: pointer;
             }
             .comment-form input[type="text"] {
-                width: 800px;
+                width: 778px;
             }
             .comment-list {
                 list-style-type: none;

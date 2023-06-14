@@ -32,8 +32,8 @@ List<Product> products = pd.getAllProducts();
     <div class="header">
         <div class="navigation">
             <a id="home" href="home.jsp">Home</a>
-            <a id="adminPage" href="admin.jsp">Admin</a>
             <a id="cart" href="cart.jsp">Cart</a>
+            <a id="adminPage" href="admin.jsp">Admin</a>
             <a id="login" href="login.jsp">Login</a>
             <a id="logout" href="logoutServlet">Logout</a>
 
@@ -41,19 +41,20 @@ List<Product> products = pd.getAllProducts();
     </div>
 
     <body>
-        <div class="container ">
-            
+        <div class="body">
             <div class="option">
                 <h3>QL sản phẩm</h3>
-                <button class="btn-chi-tiet">Thêm</button>
-                <button class="btn-chi-tiet">Sua</button>
-                <button class="btn-chi-tiet">xoa</button>
+                <button id="btn-them" class="nut" data-target="form-them">Thêm sản phẩm</button>
+                <button id="btn-sua" class="nut" data-target="form-sua">Sửa sản phẩm</button>
+                <button id="btn-xoa" class="nut" data-target="form-xoa">Xóa sản phẩm</button>
+
+
             </div>
 
 
             <div class="content">
-                <div class="container them">
-                    <h3>Thêm</h3>
+                <div class="container them" id="form-them">
+                    <h3>Thêm sản phẩm</h3>
                     <form action="addProductServlet" method="POST">
                         <label for="productId">ID:</label>
                         <input type="text" id="productId" name="productId" required><br>
@@ -67,14 +68,15 @@ List<Product> products = pd.getAllProducts();
                         <label for="productPrice">Giá:</label>
                         <input type="text" id="productPrice" name="productPrice" required><br>
 
-                        <label for="productImage">Ảnh:</label>
-                        <input type="text" id="productImage" name="productImage" required><br>
+                        <label for="productImage" class="custom-file-upload">Chọn ảnh</label>
+                        <input type="file" id="productImage" name="productImage" required><br>
+
 
                         <input type="submit" value="Thêm sản phẩm">
                     </form>
                 </div>
-                <div class="container sua">
-                    <h3>Sua</h3>
+                <div class="container sua" id="form-sua">
+                    <h3>Sửa sản phẩm</h3>
                     <form action="updateProductServlet" method="POST">
                         <label for="productId">ID sản phẩm:</label>
                         <input type="text" id="productId" name="productId" required><br>
@@ -88,57 +90,51 @@ List<Product> products = pd.getAllProducts();
                         <label for="productPrice">Giá mới:</label>
                         <input type="text" id="productPrice" name="productPrice" required><br>
 
-                        <label for="productImage">Ảnh mới:</label>
-                        <input type="text" id="productImage" name="productImage" required><br>
+                        <label for="productImage" class="custom-file-upload">Chọn ảnh</label>
+                        <input type="file" id="productImage" name="productImage" required><br>
+
 
                         <input type="submit" value="Cập nhật sản phẩm">
                     </form>
                 </div>
-                <div class="container xoa">
-                    <h3>xoa</h3>
+                <div class="container xoa" id="form-xoa">
+                    <h3>Xóa sản phẩm</h3>
                     <form action="deleteProductServlet" method="POST">
                         <label for="productId">ID sản phẩm:</label>
                         <input type="text" id="productId" name="productId" required><br>
-
                         <input type="submit" value="Xóa sản phẩm">
                     </form>
                 </div>
             </div>
         </div>
 
+
     </body>
-
     <script>
-        window.onload = function () {
+        const btnThem = document.getElementById('btn-them');
+        const btnSua = document.getElementById('btn-sua');
+        const btnXoa = document.getElementById('btn-xoa');
+        const formThem = document.getElementById('form-them');
+        const formSua = document.getElementById('form-sua');
+        const formXoa = document.getElementById('form-xoa');
 
-            var btnThem = document.querySelector(".btn-chi-tiet:nth-child(1)");
-            var btnSua = document.querySelector(".btn-chi-tiet:nth-child(2)");
-            var btnXoa = document.querySelector(".btn-chi-tiet:nth-child(3)");
-            var divThem = document.querySelector(".container.them");
-            var divSua = document.querySelector(".container.sua");
-            var divXoa = document.querySelector(".container.xoa");
+        btnThem.addEventListener('click', () => {
+            formThem.style.display = 'block';
+            formSua.style.display = 'none';
+            formXoa.style.display = 'none';
+        });
 
+        btnSua.addEventListener('click', () => {
+            formThem.style.display = 'none';
+            formSua.style.display = 'block';
+            formXoa.style.display = 'none';
+        });
 
-            btnThem.onclick = function () {
-                divThem.style.display = "block";
-                divSua.style.display = "none";
-                divXoa.style.display = "none";
-            };
-
-
-            btnSua.onclick = function () {
-                divThem.style.display = "none";
-                divSua.style.display = "block";
-                divXoa.style.display = "none";
-            };
-
-
-            btnXoa.onclick = function () {
-                divThem.style.display = "none";
-                divSua.style.display = "none";
-                divXoa.style.display = "block";
-            };
-        };
+        btnXoa.addEventListener('click', () => {
+            formThem.style.display = 'none';
+            formSua.style.display = 'none';
+            formXoa.style.display = 'block';
+        });
     </script>
 
 </html>
