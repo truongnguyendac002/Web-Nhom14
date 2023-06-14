@@ -31,15 +31,9 @@ if(cart_list != null) {
         <div class="navigation">
 
             <a id="home" href="home.jsp">Home</a>
-<<<<<<< HEAD
-<<<<<<< HEAD
             <a id="cart" href="cart.jsp">Cart<span class="badge badge-warning label-warning">${ cart_list.size() }</span></a>
-=======
-=======
->>>>>>> ffbea5724b754f0cfa79e647862fe0e4be7d10af
             <a id="adminPage" href="admin.jsp">Admin</a>
             <a id="cart" href="cart.jsp">Cart</a>
->>>>>>> ffbea5724b754f0cfa79e647862fe0e4be7d10af
             <a id="login" href="login.jsp">Login</a>
             <a id="logout" href="logoutServlet">Logout</a>
 
