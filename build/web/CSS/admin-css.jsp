@@ -14,14 +14,8 @@
             * {
                 margin: 0px;
                 padding: 0px;
-            }
-
-
-            body {
                 font-family: Arial;
-                background-color: #f2f2f2;
             }
-
             .header {
                 background-color: #333;
                 color: #fff;
@@ -34,12 +28,23 @@
                 margin-right: 10px;
             }
 
+            form {
+                width: 780px;
+            }
+
             a {
                 text-decoration: none;
             }
-
             .container {
-                max-width: 400px;
+                display: none;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+            }
+
+            .body {
+                max-width: 800px;
                 margin: 0 auto;
                 padding: 40px;
                 margin-top: 60px;
@@ -48,31 +53,55 @@
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             }
 
-            h1 {
-                text-align: center;
-                color: #333;
+            .option {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
             }
 
-            form {
-                margin-top: 20px;
+            .option h3 {
+                margin: 0;
             }
 
-            label {
+            .nut {
                 display: block;
-                margin-bottom: 5px;
-                color: #333;
+                padding: 10px 15px;
+                background-color: #337ab7;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                font-size: 14px;
+                cursor: pointer;
             }
 
-            input[type="text"],
-            input[type="password"] {
-                width: 95%;
+            .nut:hover {
+                background-color: #23527c;
+            }
+
+            .content {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .container {
+                display: none;
+            }
+
+            .container h3 {
+                margin: 0 0 10px;
+            }
+
+            .container input[type="text"] {
+                width: 100%;
                 padding: 10px;
                 border: 1px solid #ccc;
                 border-radius: 3px;
+                margin-bottom: 10px;
             }
 
-            input[type="submit"] {
-                width: 100%;
+            .container input[type="submit"] {
+                width: 801px;
                 padding: 10px;
                 background-color: #333;
                 color: #fff;
@@ -81,96 +110,31 @@
                 cursor: pointer;
             }
 
-            .content {
-                width: 100%;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 20px;
+            .container input[type="submit"]:hover {
+                background-color: #222;
+            }
+            input[type="file"] {
+                display: none;
             }
 
-            .Tieu-de {
-                font-size: 24px;
-                font-weight: bold;
-                margin-bottom: 20px;
-            }
-
-            .hang {
-                display: flex;
-                flex-wrap: wrap;
-            }
-
-
-
-            .the-san-pham {
-                background-color: #fff;
-                padding: 10px;
-                margin: 10px;
-                width: 29.33%;
-                border-radius: 5px;
-                text-align: center;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            }
-
-            .ten-san-pham {
-                font-size: 18px;
-                margin-bottom: 10px;
-            }
-
-            .the-san-pham img {
-                width: 100%;
-                height: auto;
-                margin-bottom: 10px;
-            }
-
-            .btn-chi-tiet,
-            .btn-them-gio-hang {
-                display: block;
-                width: 100%;
-                padding: 8px 0px;
-                color: #fff;
-                border: none;
-                border-radius: 4px;
-                font-size: 14px;
+            .custom-file-upload {
+                display: inline-block;
+                padding: 6px 12px;
                 cursor: pointer;
-                margin-bottom: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #f1f1f1;
+                color: #333;
+                margin-bottom: 10px;
             }
 
-            .btn-them-gio-hang {
-                background-color: #5cb85c;
-            }
-            .btn-chi-tiet {
-                background-color: #337ab7;
-            }
-            h4.gia-san-pham {
-                padding-bottom: 11px;
+            .custom-file-upload:hover {
+                background-color: #e9e9e9;
             }
             
-            .badge {
-                padding-left: 9px;
-                padding-right: 9px;
-                -webkit-border-radius: 9px;
-                -moz-border-radius: 9px;
-                border-radius: 9px;
-            }
 
-            .label-warning,
-            .badge-warning {
-                  background-color: #c67605;
-            }
-            
-            #adminPage {
-            display: none;
-            }
-            
-            #adminPage {
-            display: none;
-            }
-            
-            #adminPage {
-            display: none;
-            }
         </style>
+
     </head>
     <% 
 if(auth !=null) {
@@ -199,7 +163,7 @@ if(auth !=null) {
         #logout {
             display: none;
         }
-        
+
 
     </style>
     <% 
