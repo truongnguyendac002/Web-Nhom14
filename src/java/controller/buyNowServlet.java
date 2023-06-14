@@ -17,6 +17,7 @@ import java.util.*;
 import connection.*;
 import model.*;
 import dao.*;
+import jakarta.servlet.RequestDispatcher;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -64,6 +65,20 @@ public class buyNowServlet extends HttpServlet {
     throws ServletException, IOException {
         
         response.setContentType("text/html;charset=UTF-8");
+        
+    } 
+
+    /** 
+     * Handles the HTTP <code>POST</code> method.
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         try(PrintWriter out = response.getWriter()) {
             
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd");
@@ -95,22 +110,10 @@ public class buyNowServlet extends HttpServlet {
             } else {
                 response.sendRedirect("login.jsp");
             }
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
-    } 
-
-    /** 
-     * Handles the HTTP <code>POST</code> method.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
     }
 
     /** 
