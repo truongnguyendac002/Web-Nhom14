@@ -47,10 +47,10 @@ if(cart_list != null) {
     </head>
     <div class="header">
         <div class="navigation">
-            <a id="home" href="home.jsp">Home</a>
-            <a id="cart" href="cart.jsp">Cart<span class="badge badge-warning label-warning">${ cart_list.size() }</span></a>
-            <a id="login" href="login.jsp">Login</a>
-            <a id="logout" href="logoutServlet">Logout</a>
+            <a id="home" href="home.jsp">Trang chủ</a>
+            <a id="cart" href="cart.jsp">Giỏ hàng<span class="badge badge-warning label-warning">${ cart_list.size() }</span></a>
+            <a id="login" href="login.jsp">Đăng nhập</a>
+            <a id="logout" href="logoutServlet">Đăng xuất</a>
         </div>
     </div>
     <body>

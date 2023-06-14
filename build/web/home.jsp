@@ -24,18 +24,21 @@ if(cart_list != null) {
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home</title>
+        <title>Trang chủ</title>
         <%@include file="CSS/home-css.jsp" %>
     </head>
     <div class="header">
         <div class="navigation">
 
-            <a id="home" href="home.jsp">Home</a>
+            <a id="home" href="home.jsp">Trang chủ</a>
+            <a id="nam" href="nam.jsp">Đồ nam</a>
+            <a id="nu" href="nu.jsp">Đồ nữ</a>
+            <a id="treem" href="treem.jsp">Đồ trẻ em</a>
             <a id="cart" href="cart.jsp">Cart<span class="badge badge-warning label-warning">${ cart_list.size() }</span></a>
             <a id="adminPage" href="admin.jsp">Admin</a>
-            <a id="login" href="login.jsp">Login</a>
-            <a id="logout" href="logoutServlet">Logout</a>
-
+            <a id="login" href="login.jsp">Đăng nhập</a>
+            <a id="logout" href="logoutServlet">Đăng xuất</a>
+            
 
         </div>
     </div>
@@ -43,15 +46,20 @@ if(cart_list != null) {
     <body>
         <div class="content">
             <div class="Tieu-de">Tất cả sản phẩm</div>
-            <div class="category-buttons">
-                <a href="category.jsp?category=male">Đồ nam</a>
-                <a href="category.jsp?category=female">Đồ nữ</a>
-                <a href="category.jsp?category=kids">Đồ trẻ em</a>
-            </div>
             <div class="hang">
                 <%
                 if( !products.isEmpty()) {
                     for (Product p: products) { 
+                    %>
+                    <div class="the-san-pham">
+                        <h3 class="ten-san-pham"><%= p.getName() %>  </h3>
+                        <h4 class="gia-san-pham"><%= Double.valueOf(p.getPrice()).intValue()%> VNÐ </h4>
+                        <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
+                        <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>">Xem chi tiết</a>
+                        <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= p.getId() %>">Thêm vào giỏ hàng</a>
+                    </div>
+                    <% }
+
                 %>
                 <div class="the-san-pham">
                     <h3 class="ten-san-pham"><%= p.getName() %>  </h3>
@@ -59,15 +67,14 @@ if(cart_list != null) {
                     <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
                     <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>">Xem chi tiết</a>
                     <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= p.getId() %>">Thêm vào giỏ hàng</a>
+                    <a class="btn-mua-ngay" href="buy-now?quantity=1&id<%= p.getId()%>">Mua ngay</a>
                 </div>
                 <% }
                 }
                 %>
-
-
             </div>
-        </div>
-
+            
+        </div>     
     </body>
 
 </html>

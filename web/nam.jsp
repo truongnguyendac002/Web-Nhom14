@@ -24,7 +24,7 @@ if(cart_list != null) {
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Trang chủ</title>
+        <title>Home</title>
         <%@include file="CSS/home-css.jsp" %>
     </head>
     <div class="header">
@@ -45,31 +45,21 @@ if(cart_list != null) {
 
     <body>
         <div class="content">
-            <div class="Tieu-de">Tất cả sản phẩm</div>
+            <div class="Tieu-de">Đồ nam</div>
             <div class="hang">
                 <%
-                if( !products.isEmpty()) {
-                    for (Product p: products) { 
-                    %>
-                    <div class="the-san-pham">
-                        <h3 class="ten-san-pham"><%= p.getName() %>  </h3>
-                        <h4 class="gia-san-pham"><%= Double.valueOf(p.getPrice()).intValue()%> VNÐ </h4>
-                        <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
-                        <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>">Xem chi tiết</a>
-                        <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= p.getId() %>">Thêm vào giỏ hàng</a>
-                    </div>
-                    <% }
-
-                %>
-                <div class="the-san-pham">
-                    <h3 class="ten-san-pham"><%= p.getName() %>  </h3>
-                    <h4 class="gia-san-pham"><%= Double.valueOf(p.getPrice()).intValue()%> VNÐ </h4>
-                    <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
-                    <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>">Xem chi tiết</a>
-                    <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= p.getId() %>">Thêm vào giỏ hàng</a>
-                    <a class="btn-mua-ngay" href="buy-now?quantity=1&id<%= p.getId()%>">Mua ngay</a>
-                </div>
-                <% }
+                if (!products.isEmpty()) {
+                    for (Product p: products) 
+                        if (p.getCategory().equals("nam")) { 
+                        %>
+                            <div class="the-san-pham">
+                                <h3 class="ten-san-pham"><%= p.getName() %>  </h3>
+                                <h4 class="gia-san-pham"><%= Double.valueOf(p.getPrice()).intValue()%> VNÐ </h4>
+                                <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
+                                <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>">Xem chi tiết</a>
+                                <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= p.getId() %>">Thêm vào giỏ hàng</a>
+                            </div>
+                        <% }
                 }
                 %>
             </div>

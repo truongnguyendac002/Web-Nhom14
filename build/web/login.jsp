@@ -25,25 +25,25 @@ if(cart_list != null) {
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login</title>
+        <title>Đăng nhập</title>
         <%@include file = "CSS/login-css.jsp" %>
 
     </head>
     <div class="header">
         <div class="navigation">
-            <a id="home" href="home.jsp">Home</a>
-            <a href="login.jsp">Login</a>
-            <a href="register.jsp">Register</a>
+            <a id="home" href="home.jsp">Trang chủ</a>
+            <a href="login.jsp">Đăng nhập</a>
+            <a href="register.jsp">Đăng ký</a>
         </div>
     </div>
     <body>
 
         <div class="container">
-            <h1>Login</h1>
+            <h1>Đăng nhập</h1>
             <form method="post" action="loginServlet">
-                <label for="username">Username:</label>
+                <label for="username">Tài khoản</label>
                 <input type="text" id="username" name="username" required><br><br>
-                <label for="password">Password:</label>
+                <label for="password">Mật khẩu</label>
                 <input type="password" id="password" name="password" required><br><br>
                 <p class="error-message">Tài khoản hoặc mật khẩu không hợp lệ. Vui lòng thử lại.</p>
                 <% 
