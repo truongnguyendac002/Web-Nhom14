@@ -38,7 +38,7 @@ if(cart_list != null) {
             <a id="adminPage" href="admin.jsp">Admin</a>
             <a id="login" href="login.jsp">Đăng nhập</a>
             <a id="logout" href="logoutServlet">Đăng xuất</a>
-            
+            <a id="register"  href="register.jsp">Đăng ký</a>
 
         </div>
     </div>

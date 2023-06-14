@@ -209,9 +209,10 @@ if(auth !=null) {
 
     %>
     <style>
-        #login {
+        #login, #register {
             display: none;
         }
+        
     </style>
     <% 
     }
