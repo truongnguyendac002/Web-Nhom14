@@ -88,8 +88,8 @@ if(cart_list != null) {
                                     </div>
                                 </form>
                             </td>
-                            <td>hi</td>
-                            <td><a class="btn btn-sm btn-danger" href="">XOA</a></td>
+                            <td><%= dcf.format(c.getPrice()) %></td>
+                            <td><a class="btn btn-sm btn-danger" href="remove-from-cart?id=<%= c.getId() %>">XOA</a></td>
                         </tr>
                     <% }
                 }

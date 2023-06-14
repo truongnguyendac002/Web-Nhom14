@@ -20,6 +20,10 @@
         <servlet-name>productDetailServlet</servlet-name>
         <servlet-class>controller.productDetailServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>removeFromCart</servlet-name>
+        <servlet-class>controller.removeFromCart</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/loginServlet</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>productDetailServlet</servlet-name>
         <url-pattern>/productDetailServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>removeFromCart</servlet-name>
+        <url-pattern>/remove-from-cart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
