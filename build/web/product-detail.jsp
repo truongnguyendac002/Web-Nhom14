@@ -46,7 +46,7 @@
             <p><strong>Tên sản phẩm:</strong> <%= product.getName() %></p>
             <p><strong>Loại hàng:</strong> <%= product.getCategory() %></p>
             <p><strong>Giá:</strong> <%= Double.valueOf(product.getPrice() ).intValue() %> VNÐ</p>
-            <a class="btn-them-gio-hang">Thêm vào giỏ hàng</a>
+            <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= product.getId() %>">Thêm vào giỏ hàng</a>
             <img src="./product-image/<%= product.getImage() %>" alt="Product Image">
         </div>
         <div class = "comment content">
