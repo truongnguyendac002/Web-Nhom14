@@ -59,14 +59,11 @@ if(cart_list != null) {
                         <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= p.getId() %>">Thêm vào giỏ hàng</a>
                     </div>
                     <% }
-<<<<<<< Updated upstream
-=======
 
                 %>
                 
                 <% }
->>>>>>> Stashed changes
-                }
+                
                 %>
             </div>
             
