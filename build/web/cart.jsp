@@ -3,12 +3,15 @@
     Created on : May 23, 2023, 12:52:21 PM
     Author     : truon
 --%>
+<%@page import="java.text.DecimalFormat" %>
 <%@page import="model.*" %>
 <%@page import="java.util.*" %>
 <%@page import="connection.DBcon" %>
 <%@page import="dao.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% 
+DecimalFormat dcf = new DecimalFormat("#.##");
+request.setAttribute("dcf", dcf);
 User auth = (User) request.getSession().getAttribute("auth");
 
 ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
@@ -52,7 +55,7 @@ if(cart_list != null) {
     <body>
         <div class="container">
             <div class="d-flex py-3">
-                <h3>Tong gia: ${ (total>0)?total:0}₫ </h3>
+                <h3>Tong gia: ${ (total>0)?dcf.format(total):0}₫ </h3>
                 <a class="mx-3 btn btn-primary">Thanh toan</a>
             </div>
             <table class="table table-lought">
@@ -73,14 +76,14 @@ if(cart_list != null) {
                         <tr>
                             <td><%= c.getName() %></td>
                             <td><%= c.getCategory() %></td>
-                            <td><%= c.getPrice() %></td>
+                            <td><%= dcf.format(c.getPrice()) %></td>
                             <td>
                                 <form action="" method="post" class="form-inline">
                                     <input type="hidden" name="id" value="<%= c.getId() %>" class="form-input">
                                     <div class="form-group d-flex justify-content-between">
-                                        <a class="btn btn-sm btn-decre" href="incDecQuantity?action=dec$id=<%= c.getId() %>"><i class="fas fa-minus-square"></i></a>
-                                        <input type="text" name="quantity" class="form-control" value="1" readonly> <!--So luong sp-->
-                                        <a class="btn btn-sm btn-incre" href="incDecQuantity?action=inc$id=<%= c.getId() %>"><i class="fas fa-plus-square"></i></a>
+                                        <a class="btn btn-sm btn-decre" href="incDecQuantity?action=dec&id=<%= c.getId() %>"><i class="fas fa-minus-square"></i></a>
+                                        <input type="text" name="quantity" class="form-control" value="<%= c.getQuantity() %>" readonly> <!--So luong sp-->
+                                        <a class="btn btn-sm btn-incre" href="incDecQuantity?action=inc&id=<%= c.getId() %>"><i class="fas fa-plus-square"></i></a>
                                     </div>
                                 </form>
                             </td>

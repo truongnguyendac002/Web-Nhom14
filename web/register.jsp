@@ -44,16 +44,17 @@ if(auth != null) {
                     if (error != null && error.equals("true")) { %>
                     <style>
                     .error-message {
-                    display: block;
-                    padding-bottom: 10px;
-                    color: #DC143C;
-                    animation: rung 0.5s;;
+                        display: block;
+                        padding-bottom: 10px;
+                        color: #DC143C;
+                        animation: rung 0.5s;
+                    }
                     </style>
                     <% } 
                     else { %>
                     <style>
                     .error-message {
-                    display: none;
+                        display: none;
                     }
                     </style>
                     <%

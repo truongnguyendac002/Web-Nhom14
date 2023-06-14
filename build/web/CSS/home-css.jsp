@@ -145,10 +145,43 @@
             h4.gia-san-pham {
                 padding-bottom: 11px;
             }
+<<<<<<< HEAD
+<<<<<<< HEAD
+            
+            .badge {
+                padding-left: 9px;
+                padding-right: 9px;
+                -webkit-border-radius: 9px;
+                -moz-border-radius: 9px;
+                border-radius: 9px;
+            }
+
+            .label-warning,
+            .badge-warning {
+                  background-color: #c67605;
+=======
+            #adminPage {
+            display: none;
+>>>>>>> ffbea5724b754f0cfa79e647862fe0e4be7d10af
+=======
+            #adminPage {
+            display: none;
+>>>>>>> ffbea5724b754f0cfa79e647862fe0e4be7d10af
+            }
         </style>
     </head>
     <% 
 if(auth !=null) {
+    if (auth.getEmail().equals("admin")){
+    %>
+    <style>
+        #adminPage {
+            display: inline;
+        }
+    </style>
+    <% 
+        }
+
     %>
     <style>
         #login {
@@ -158,11 +191,13 @@ if(auth !=null) {
     <% 
     }
     else {
+
     %>
     <style>
         #logout {
             display: none;
         }
+        
 
     </style>
     <% 
