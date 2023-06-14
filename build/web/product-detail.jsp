@@ -20,7 +20,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Product detail</title>
+        <title>Chi tiết sản phẩm</title>
         <%@include file = "CSS/product-detail-css.jsp" %>
         <%
         String productId =(String)request.getAttribute("productId");
@@ -33,10 +33,10 @@
     </head>
     <div class="header">
         <div class="navigation">
-            <a id="home" href="home.jsp">Home</a>
-            <a id="order" href="cart.jsp">Cart</a>
-            <a id="login" href="login.jsp">Login</a>
-            <a id="logout" href="logoutServlet">Logout</a>
+            <a id="home" href="home.jsp">Trang chủ</a>
+            <a id="order" href="cart.jsp">Giỏ hàng</a>
+            <a id="login" href="login.jsp">Đăng nhập</a>
+            <a id="logout" href="logoutServlet">Đăng xuất</a>
         </div>
     </div>
     <body>
