@@ -31,7 +31,7 @@ if(cart_list != null) {
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cart</title>
+        <title>Giỏ hàng</title>
         <%@include file = "CSS/home-css.jsp" %>
         <%@include file = "CSS/cart-css.jsp" %>
         <%@include file = "CSS/head.jsp" %>

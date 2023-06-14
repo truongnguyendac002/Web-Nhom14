@@ -24,7 +24,7 @@ if(cart_list != null) {
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home</title>
+        <title>Đồ nam</title>
         <%@include file="CSS/home-css.jsp" %>
     </head>
     <div class="header">
