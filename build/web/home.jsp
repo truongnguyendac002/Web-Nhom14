@@ -34,7 +34,7 @@ if(cart_list != null) {
             <a id="nam" href="nam.jsp">Đồ nam</a>
             <a id="nu" href="nu.jsp">Đồ nữ</a>
             <a id="treem" href="treem.jsp">Đồ trẻ em</a>
-            <a id="cart" href="cart.jsp">Cart<span class="badge badge-warning label-warning">${ cart_list.size() }</span></a>
+            <a id="cart" href="cart.jsp">Giỏ hàng<span class="badge badge-warning label-warning">${ cart_list.size() }</span></a>
             <a id="adminPage" href="admin.jsp">Admin</a>
             <a id="login" href="login.jsp">Đăng nhập</a>
             <a id="logout" href="logoutServlet">Đăng xuất</a>
@@ -59,7 +59,11 @@ if(cart_list != null) {
                         <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= p.getId() %>">Thêm vào giỏ hàng</a>
                     </div>
                     <% }
-                }
+
+                %>
+                
+                <% }
+                
                 %>
             </div>
             
