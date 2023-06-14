@@ -12,29 +12,29 @@ if(auth != null) {
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Register</title>
+        <title>Đăng ký</title>
         <%@include file = "CSS/register-css.jsp" %>
     </head>
     <div class="header">
         <div class="navigation">
-            <a id="home" href="home.jsp">Home</a>
-            <a href="login.jsp">Login</a>
-            <a href="register.jsp">Register</a>
+            <a id="home" href="home.jsp">Trang chủ</a>
+            <a href="login.jsp">Đăng nhập</a>
+            <a href="register.jsp">Đăng ký</a>
         </div>
     </div>
     <body>
 
 
         <div class="container">
-            <h1>Register</h1>
+            <h1>Đăng ký</h1>
             <form method="post" action="registerServlet">
-                <label for="username">Username:</label>
+                <label for="username">Tài khoản</label>
                 <input type="text" id="username" name="username" required><br><br>
-                <label for="name">Name:</label>
+                <label for="name">Tên</label>
                 <input type="text" id="name" name="name" required><br><br>
-                <label for="phone">Phone:</label>
+                <label for="phone">Số điện thoại</label>
                 <input type="text" id="phone" name="phone" required><br><br>
-                <label for="password">Password:</label>
+                <label for="password">Mật khẩu</label>
                 <input type="password" id="password" name="password" required><br><br>
                 
                 
