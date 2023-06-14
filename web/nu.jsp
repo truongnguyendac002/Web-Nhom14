@@ -36,7 +36,8 @@ if(cart_list != null) {
             <a id="adminPage" href="admin.jsp">Admin</a>
             <a id="login" href="login.jsp">Đăng nhập</a>
             <a id="logout" href="logoutServlet">Đăng xuất</a>
-            
+            <a id="register"  href="register.jsp">Đăng ký</a>
+
 
         </div>
     </div>
@@ -49,19 +50,19 @@ if(cart_list != null) {
                 if (!products.isEmpty()) {
                     for (Product p: products) 
                         if (p.getCategory().equals("nu")) { 
-                        %>
-                            <div class="the-san-pham">
-                                <h3 class="ten-san-pham"><%= p.getName() %>  </h3>
-                                <h4 class="gia-san-pham"><%= Double.valueOf(p.getPrice()).intValue()%> VNÐ </h4>
-                                <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
-                                <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>">Xem chi tiết</a>
-                                <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= p.getId() %>">Thêm vào giỏ hàng</a>
-                            </div>
-                        <% }
-                }
+                %>
+                <div class="the-san-pham">
+                    <h3 class="ten-san-pham"><%= p.getName() %>  </h3>
+                    <h4 class="gia-san-pham"><%= Double.valueOf(p.getPrice()).intValue()%> VNÐ </h4>
+                    <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
+                    <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>">Xem chi tiết</a>
+                    <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= p.getId() %>">Thêm vào giỏ hàng</a>
+                </div>
+                <% }
+        }
                 %>
             </div>
-            
+
         </div>     
     </body>
 
