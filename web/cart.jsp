@@ -9,6 +9,7 @@
 <%@page import="connection.DBcon" %>
 <%@page import="dao.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <% 
 DecimalFormat dcf = new DecimalFormat("#.##");
 request.setAttribute("dcf", dcf);

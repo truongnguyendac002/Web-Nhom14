@@ -33,7 +33,6 @@ if(cart_list != null) {
             <a id="home" href="home.jsp">Home</a>
             <a id="cart" href="cart.jsp">Cart<span class="badge badge-warning label-warning">${ cart_list.size() }</span></a>
             <a id="adminPage" href="admin.jsp">Admin</a>
-            <a id="cart" href="cart.jsp">Cart</a>
             <a id="login" href="login.jsp">Login</a>
             <a id="logout" href="logoutServlet">Logout</a>
 
