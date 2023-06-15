@@ -34,7 +34,6 @@ if(cart_list != null) {
         <title>Giỏ hàng</title>
         <%@include file = "CSS/home-css.jsp" %>
         <%@include file = "CSS/cart-css.jsp" %>
-        <%--<%@include file = "CSS/head.jsp" %>--%>
         <style type="text/css">
             .table tbody td {
                 vertical-align: middle;
@@ -82,10 +81,10 @@ if(cart_list != null) {
                             <form action="buy-now" method="post" class="form-inline">
                                 <input type="hidden" name="id" value="<%= c.getId() %>" class="form-input">
                                 <div class="form-group d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-decre" href="incDecQuantity?action=dec&id=<%= c.getId() %>">Giam<i class="fas fa-minus-square"></i></a>
+                                    <a class="btn btn-sm btn-decre" href="incDecQuantity?action=dec&id=<%= c.getId() %>">Giảm<i class="fas fa-minus-square"></i></a>
                                     <input type="text" name="quantity" class="form-control " value="<%= c.getQuantity() %>" readonly> <!--So luong sp-->
-                                    <a class="btn btn-sm btn-incre" href="incDecQuantity?action=inc&id=<%= c.getId() %>">Tang<i class="fas fa-plus-square"></i></a>
-                                    <button type="submit" class="btn btn-primary btn-sm">Mua</button>
+                                    <a class="btn btn-sm btn-incre" href="incDecQuantity?action=inc&id=<%= c.getId() %>">Tăng<i class="fas fa-plus-square"></i></a>
+                                    <button type="submit" class="btn btn-primary btn-buy">Mua</button>
                                 </div>
                             </form>
                         </td>

@@ -94,7 +94,8 @@
             }
             
             .btn-decre {
-                color: #000;
+                color: #fff;
+                background-color: #28a745;
             }
 
             .btn-incre {
@@ -118,6 +119,10 @@
                 cursor: pointer;
                 margin-bottom: 5px;
                 justify-content: center;
+            }
+            
+            .btn-buy {
+                width: 20%;
             }
 
         </style>

@@ -25,7 +25,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Đơn hàng</title>
         <%@include file="CSS/home-css.jsp" %>
-        <%@include file="CSS/head.jsp" %>
+        <%@include file="CSS/cart-css.jsp" %>
     </head>
     <body>
         <div class="container">

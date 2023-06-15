@@ -82,7 +82,7 @@ public class addToCartServlet extends HttpServlet {
                 for(Cart c:cartList) {
                     if(c.getId() == id) {
                         exist = true; //sp da ton tai trong gio hang
-                        out.println("<h3 style='color: crimson; text-align:center'>San pham da co trong gio hang.<a href='cart.jsp'>Ði toi gio hang</a></h3>"); 
+                        out.println("<h3 style='color: crimson; text-align:center'>Sản phẩm đã có trong giỏ hàng.<a href='cart.jsp'>Đi tới giỏ hàng!</a></h3>"); 
                     }
                 }
                 if(!exist) {
