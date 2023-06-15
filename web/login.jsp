@@ -27,6 +27,8 @@ if(cart_list != null) {
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Đăng nhập</title>
         <%@include file = "CSS/login-css.jsp" %>
+        <%@include file = "CSS/home-css.jsp" %>
+
 
     </head>
     <div class="header">
