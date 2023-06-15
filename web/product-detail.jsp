@@ -28,7 +28,6 @@
         ProductDAO productDAO = new ProductDAO(DBcon.getConnection());
         Product product = productDAO.getProductById(productIdInt);
         UserDAO userDAO = new UserDAO(DBcon.getConnection());
-
         %>
     </head>
     <div class="header">
