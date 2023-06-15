@@ -1,8 +1,3 @@
-<%-- 
-    Document   : order
-    Created on : May 23, 2023, 12:52:21 PM
-    Author     : truon
---%>
 <%@page import="java.text.DecimalFormat" %>
 <%@page import="model.*" %>
 <%@page import="java.util.*" %>

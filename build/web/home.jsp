@@ -1,4 +1,3 @@
-<%-- Document : home Created on : May 23, 2023, 11:52:49 AM Author : truon --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page import="connection.DBcon" %>
