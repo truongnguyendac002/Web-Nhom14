@@ -58,7 +58,7 @@ public class OrderDAO {
                 int pId = rs.getInt("p_id");
                 
                 Product product = productDao.getSingleProduct(pId);
-                order.setOrderId(rs.getInt("od_id"));
+                order.setOrderId(rs.getInt("o_id"));
                 order.setId(pId);
                 order.setName(product.getName());
                 order.setCategory(product.getCategory());
@@ -71,5 +71,16 @@ public class OrderDAO {
             e.printStackTrace();
         }
         return list;
+    }
+    
+    public void cancelOrder(int id) {
+        try {
+            query = "delete from orders where o_id=?";
+            pst = this.con.prepareStatement(query);
+            pst.setInt(1, id);
+            pst.execute();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -4,11 +4,19 @@
     Author     : Asus
 --%>
 
+<%@page import="java.text.DecimalFormat" %>
+<%@page import="connection.DBcon" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
+    DecimalFormat dcf = new DecimalFormat("#.##");
+    request.setAttribute("dcf", dcf);
     User auth = (User) request.getSession().getAttribute("auth");
+    List<Order> orders = null;
     if(auth != null) {
         request.setAttribute("auth", auth);
+        OrderDAO orderDao  = new OrderDAO(DBcon.getConnection());
+        orders = orderDao.userOrders(auth.getId());
+//        List<Order> orders = new OrderDAO(DBcon.getConnection()).userOrders(auth.getId());
     } else {
         response.sendRedirect("login.jsp");
     }
@@ -42,7 +50,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <%
+                    if(orders != null) { 
+                        for(Order o:orders) { %>
+                        <tr>
+                            <td><%= o.getDate() %></td>
+                            <td><%= o.getName() %></td>
+                            <td><%= o.getCategory() %></td>
+                            <td><%= o.getQuantity() %></td>
+                            <td><%= dcf.format(o.getPrice()) %></td>
+                            <td><a class="btn btn-sm btn-danger" href="cancel-order?id=<%=o.getOrderId() %>">Hủy đơn</a></td>
+                        </tr>
+                        <%}
+                    }   
+                    %>
                 </tbody>
             </table>
         </div>

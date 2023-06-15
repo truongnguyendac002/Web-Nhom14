@@ -96,16 +96,43 @@
             .btn-decre {
                 color: #fff;
                 background-color: #28a745;
+                display: block;
+                width: 30%;
+                padding: 8px 0px;
+                border: none;
+                border-radius: 4px;
+                font-size: 10px;
+                cursor: pointer;
+                margin-bottom: 5px;
+                justify-content: center;
             }
 
             .btn-incre {
                 color: #fff;
                 background-color: #28a745;
+                display: block;
+                width: 30%;
+                padding: 8px 0px;
+                border: none;
+                border-radius: 4px;
+                font-size: 10px;
+                cursor: pointer;
+                margin-bottom: 5px;
+                justify-content: center;
             }
 
             .btn-danger {
                 background-color: #dc3545;
+                display: block;
+                width: 30%;
+                padding: 8px 0px;
                 color: #fff;
+                border: none;
+                border-radius: 4px;
+                font-size: 10px;
+                cursor: pointer;
+                margin-bottom: 5px;
+                justify-content: center;
             }
             
             .btn-primary {
@@ -122,7 +149,7 @@
             }
             
             .btn-buy {
-                width: 20%;
+                width: 30%;
             }
 
         </style>
