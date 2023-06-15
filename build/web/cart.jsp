@@ -34,7 +34,7 @@ if(cart_list != null) {
         <title>Giỏ hàng</title>
         <%@include file = "CSS/home-css.jsp" %>
         <%@include file = "CSS/cart-css.jsp" %>
-        <%@include file = "CSS/head.jsp" %>
+        <%--<%@include file = "CSS/head.jsp" %>--%>
         <style type="text/css">
             .table tbody td {
                 vertical-align: middle;
@@ -48,9 +48,6 @@ if(cart_list != null) {
     <div class="header">
         <div class="navigation">
             <a id="home" href="home.jsp">Trang chủ</a>
-            <a id="nam" href="nam.jsp">Đồ nam</a>
-            <a id="nu" href="nu.jsp">Đồ nữ</a>
-            <a id="treem" href="treem.jsp">Đồ trẻ em</a>
             <a id="cart" href="cart.jsp">Giỏ hàng<span class="badge badge-warning label-warning">${ cart_list.size() }</span></a>
             <a id="login" href="login.jsp">Đăng nhập</a>
             <a id="logout" href="logoutServlet">Đăng xuất</a>
@@ -59,8 +56,8 @@ if(cart_list != null) {
     <body>
         <div class="container">
             <div class="d-flex py-3">
-                <h3>Tổng giá: ${ (total>0)?dcf.format(total):0}₫ </h3>
-                <a class="mx-3 btn btn-primary">Thanh toán</a>
+                <h3>Tổng giá: ${ (total>0)?dcf.format(total):0}₫</h3>
+                <a class="mx-3 btn btn-primary" href="check-out">Thanh toán</a>
             </div>
             <table class="table table-lought">
                 <thead>
@@ -80,14 +77,14 @@ if(cart_list != null) {
                     <tr>
                         <td><%= c.getName() %></td>
                         <td><%= c.getCategory() %></td>
-                        <td><%= dcf.format(c.getPrice()) %></td>
+                        <td><%= dcf.format(c.getPrice()) %>₫</td>
                         <td>
                             <form action="buy-now" method="post" class="form-inline">
                                 <input type="hidden" name="id" value="<%= c.getId() %>" class="form-input">
-                                <div class="form-group d-flex justify-content-between ">
-                                    <a class="btn btn-sm btn-decre" href="incDecQuantity?action=dec&id=<%= c.getId() %>"><i class="fas fa-minus-square"></i></a>
+                                <div class="form-group d-flex justify-content-between">
+                                    <a class="btn btn-sm btn-decre" href="incDecQuantity?action=dec&id=<%= c.getId() %>">Giam<i class="fas fa-minus-square"></i></a>
                                     <input type="text" name="quantity" class="form-control " value="<%= c.getQuantity() %>" readonly> <!--So luong sp-->
-                                    <a class="btn btn-sm btn-incre" href="incDecQuantity?action=inc&id=<%= c.getId() %>"><i class="fas fa-plus-square"></i></a>
+                                    <a class="btn btn-sm btn-incre" href="incDecQuantity?action=inc&id=<%= c.getId() %>">Tang<i class="fas fa-plus-square"></i></a>
                                     <button type="submit" class="btn btn-primary btn-sm">Mua</button>
                                 </div>
                             </form>

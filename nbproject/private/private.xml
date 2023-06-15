@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/web/CSS/home-css.jsp</file>
             <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/web/cart.jsp</file>
             <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/web/login.jsp</file>
@@ -12,6 +13,18 @@
             <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/web/treem.jsp</file>
             <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/web/register.jsp</file>
             <file>file:/C:/Users/truon/Desktop/web/Web-Nhom14/web/CSS/cart-css.jsp</file>
+=======
+            <file>file:/C:/Users/Asus/OneDrive%20-%20m2xk/Desktop/Web-Nhom14/web/CSS/home-css.jsp</file>
+            <file>file:/C:/Users/Asus/OneDrive%20-%20m2xk/Desktop/Web-Nhom14/src/java/model/Order.java</file>
+            <file>file:/C:/Users/Asus/OneDrive%20-%20m2xk/Desktop/Web-Nhom14/web/cart.jsp</file>
+            <file>file:/C:/Users/Asus/OneDrive%20-%20m2xk/Desktop/Web-Nhom14/src/java/controller/buyNowServlet.java</file>
+            <file>file:/C:/Users/Asus/OneDrive%20-%20m2xk/Desktop/Web-Nhom14/web/CSS/cart-css.jsp</file>
+            <file>file:/C:/Users/Asus/OneDrive%20-%20m2xk/Desktop/Web-Nhom14/web/CSS/footer.jsp</file>
+            <file>file:/C:/Users/Asus/OneDrive%20-%20m2xk/Desktop/Web-Nhom14/src/java/dao/ProductDAO.java</file>
+            <file>file:/C:/Users/Asus/OneDrive%20-%20m2xk/Desktop/Web-Nhom14/src/java/dao/OrderDAO.java</file>
+            <file>file:/C:/Users/Asus/OneDrive%20-%20m2xk/Desktop/Web-Nhom14/web/orders.jsp</file>
+            <file>file:/C:/Users/Asus/OneDrive%20-%20m2xk/Desktop/Web-Nhom14/web/CSS/head.jsp</file>
+>>>>>>> 61bad135e193debcfa0821c9f17ae6858107303a
         </group>
     </open-files>
 </project-private>
