@@ -63,8 +63,7 @@
                 color: #333;
             }
 
-            input[type="text"],
-            input[type="password"] {
+            input[type="text"] {
                 width: 95%;
                 padding: 10px;
                 border: 1px solid #ccc;
@@ -91,40 +90,8 @@
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             }
 
-            .Tieu-de {
-                font-size: 24px;
-                font-weight: bold;
-                margin-bottom: 20px;
-            }
-
-            .hang {
-                display: flex;
-                flex-wrap: wrap;
-            }
-
-
-
-            .the-san-pham {
-                background-color: #fff;
-                padding: 10px;
-                margin: 10px;
-                width: 29.33%;
-                border-radius: 5px;
-                text-align: center;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            }
-
-            .ten-san-pham {
-                font-size: 18px;
-                margin-bottom: 10px;
-            }
-
-            .the-san-pham img {
-                width: 100%;
-                height: auto;
-                margin-bottom: 10px;
-            }
+            
+            
 
             
             .btn-them-gio-hang {
@@ -143,9 +110,6 @@
                 background-color: #5cb85c;
             }
             
-            h4.gia-san-pham {
-                padding-bottom: 11px;
-            }
             h2 {
                 text-align: center;
                 color: #333;

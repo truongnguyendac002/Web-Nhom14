@@ -26,6 +26,9 @@ List<Product> products = pd.getAllProducts();
     <div class="header">
         <div class="navigation">
             <a id="home" href="home.jsp">Trang chủ</a>
+            <a id="nam" href="nam.jsp">Đồ nam</a>
+            <a id="nu" href="nu.jsp">Đồ nữ</a>
+            <a id="treem" href="treem.jsp">Đồ trẻ em</a>
             <a id="cart" href="cart.jsp">Giỏ hàng</a>
             <a id="adminPage" href="admin.jsp">Admin</a>
             <a id="login" href="login.jsp">Đăng nhập</a>
@@ -102,7 +105,7 @@ List<Product> products = pd.getAllProducts();
             </div>
         </div>
 
- 
+
     </body>
     <script>
         const btnThem = document.getElementById('btn-them');
