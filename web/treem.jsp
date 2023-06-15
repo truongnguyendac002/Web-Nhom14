@@ -57,6 +57,7 @@ if(cart_list != null) {
                     <img src="./product-image/<%= p.getImage() %>" alt="Product Image">
                     <a class="btn-chi-tiet" href="productDetailServlet?productId=<%=p.getId()%>">Xem chi tiết</a>
                     <a class="btn-them-gio-hang" href="addToCartServlet?id=<%= p.getId() %>">Thêm vào giỏ hàng</a>
+                    <a class="btn-mua-ngay" href="buy-now?quantity=1&id=<%= p.getId() %>">Mua ngay</a>
                 </div>
                 <% }
         }

@@ -1,5 +1,3 @@
-<%-- Document : css1 Created on : May 23, 2023, 12:55:38 PM Author : truon --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page import="connection.DBcon" %>
 <%@page import="model.*" %>
